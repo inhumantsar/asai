@@ -3,7 +3,7 @@
 import json
 import logging
 import re
-from typing import Dict, Generator, List, Union
+from typing import Dict, Generator, List, Tuple, Union
 
 import requests
 from fuzzywuzzy import fuzz
@@ -67,7 +67,7 @@ def get_actions_with_wildcards(service: AWSService) -> List[str]:
 
 def search_services(
     search_term: str, min_confidence=70
-) -> Generator[tuple[int, AWSService], None, None]:
+) -> Generator[Tuple[int, AWSService], None, None]:
     """Use fuzzy matching to search the list of service names and prefixes."""
     search_term = search_term.lower()
     for service in get_services():

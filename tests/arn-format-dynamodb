@@ -1,0 +1,1 @@
+arn:aws:dynamodb:<region>:<accountID>:<resourceType>/<resourcePath>

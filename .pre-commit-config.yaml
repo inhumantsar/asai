@@ -1,0 +1,10 @@
+repos:
+  - repo: https://github.com/PyCQA/isort
+    hooks:
+      - id: isort
+  - repo: https://github.com/PyCQA/pydocstyle
+    hooks:
+      - id: pydocstyle
+  - repo: https://github.com/psf/black
+    hooks:
+      - id: black

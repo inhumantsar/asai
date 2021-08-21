@@ -1,0 +1,12 @@
+AbortMultipartUpload
+BypassGovernanceRetention
+Create*
+Delete*
+DescribeJob
+Get*
+List*
+ObjectOwnerOverrideToBucketOwner
+Put*
+Replicate*
+RestoreObject
+Update*

@@ -1,0 +1,1 @@
+arn:aws:ec2:<region>:<account>:<resourceType>/<resourcePath>

@@ -1,0 +1,33 @@
+---
+name: "version-bump"
+
+#
+# Ensure the version has been bumped by confirming no tag exists for current version
+#
+
+on:
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+  version-bump:
+    name: Ensure version has been bumped. 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: get current version number
+        run: echo "CURRVER=$(cat VERSION)" >> $GITHUB_ENV
+
+      - uses: mukunku/tag-exists-action@v1.0.0
+        id: checkTag
+        with: 
+          tag: v${{ env.CURRVER }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: fail if a tag exists for the current version.
+        run: |
+          [[ "${{ steps.checkTag.outputs.exists }}" == "true" ]] && exit 1 || echo "Looking good"

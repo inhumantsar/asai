@@ -1,0 +1,75 @@
+Amazon DynamoDB (dynamodb)
+
+Has Resource: True
+
+Actions:
+  - BatchGetItem
+  - BatchWriteItem
+  - ConditionCheckItem
+  - CreateBackup
+  - CreateGlobalTable
+  - CreateTable
+  - CreateTableReplica
+  - DeleteBackup
+  - DeleteItem
+  - DeleteTable
+  - DeleteTableReplica
+  - DescribeBackup
+  - DescribeContinuousBackups
+  - DescribeContributorInsights
+  - DescribeExport
+  - DescribeGlobalTable
+  - DescribeGlobalTableSettings
+  - DescribeKinesisStreamingDestination
+  - DescribeLimits
+  - DescribeReservedCapacity
+  - DescribeReservedCapacityOfferings
+  - DescribeStream
+  - DescribeTable
+  - DescribeTableReplicaAutoScaling
+  - DescribeTimeToLive
+  - DisableKinesisStreamingDestination
+  - EnableKinesisStreamingDestination
+  - ExportTableToPointInTime
+  - GetItem
+  - GetRecords
+  - GetShardIterator
+  - ListBackups
+  - ListContributorInsights
+  - ListExports
+  - ListGlobalTables
+  - ListStreams
+  - ListTables
+  - ListTagsOfResource
+  - PartiQLDelete
+  - PartiQLInsert
+  - PartiQLSelect
+  - PartiQLUpdate
+  - PurchaseReservedCapacityOfferings
+  - PutItem
+  - Query
+  - RestoreTableFromBackup
+  - RestoreTableToPointInTime
+  - Scan
+  - TagResource
+  - UntagResource
+  - UpdateContinuousBackups
+  - UpdateContributorInsights
+  - UpdateGlobalTable
+  - UpdateGlobalTableSettings
+  - UpdateItem
+  - UpdateTable
+  - UpdateTableReplicaAutoScaling
+  - UpdateTimeToLive
+
+ARN Format: arn:aws:dynamodb:<region>:<accountID>:<resourceType>/<resourcePath>
+ARN Regex: ^arn:aws:dynamodb:.+:.+
+
+Condition Keys:
+  - dynamodb:Attributes
+  - dynamodb:EnclosingOperation
+  - dynamodb:FullTableScan
+  - dynamodb:LeadingKeys
+  - dynamodb:ReturnConsumedCapacity
+  - dynamodb:ReturnValues
+  - dynamodb:Select

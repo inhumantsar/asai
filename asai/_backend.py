@@ -3,7 +3,7 @@
 import json
 import logging
 import re
-from typing import Generator, Union
+from typing import Dict, Generator, List, Union
 
 import requests
 from fuzzywuzzy import fuzz
@@ -18,7 +18,7 @@ _POLICIES_PREFIX = "app.PolicyEditorConfig="
 _CAMEL_REGEX = re.compile(r".+?(?:(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])|$)")
 
 
-def get_policies() -> dict:
+def get_policies() -> Dict:
     """Download all possible IAM actions, conditions, etc."""
     resp = requests.get(_POLICIES_URL)
     if resp.status_code != 200:
@@ -37,19 +37,19 @@ def get_service_by_prefix(prefix: str) -> Union[AWSService, None]:
         return
 
 
-def get_services() -> list[AWSService]:
+def get_services() -> List[AWSService]:
     """Parse out all services from policies."""
     service_map = get_policies()["serviceMap"]
     return [AWSService(name=k, **v) for k, v in service_map.items()]
 
 
-def get_actions() -> dict[str, list[str]]:
+def get_actions() -> Dict[str, List[str]]:
     """Parse out all service prefixes and actions from policies."""
     services = get_services()
     return {v.StringPrefix: v.Actions for _, v in services.items()}
 
 
-def get_actions_with_wildcards(service: AWSService) -> list[str]:
+def get_actions_with_wildcards(service: AWSService) -> List[str]:
     """Return a service's list of actions, wildcarding any common prefixes."""
     actions = []
     for action in service.Actions:
@@ -91,6 +91,6 @@ def _get_action_prefix(action: str) -> str:
     return matches[0]  # .group(0)
 
 
-def _count_prefix_occurances(prefix: str, actions: list[str]) -> int:
+def _count_prefix_occurances(prefix: str, actions: List[str]) -> int:
     """Get the number of times a prefix occurs within a list of strings."""
     return len([i for i, x in enumerate(actions) if x.startswith(prefix)])

@@ -1,4 +1,4 @@
-# AWS Service Authorization Information
+# AWS Service Authorization Information (ASAI) v0.1.1
 
 [![PyPI](https://img.shields.io/pypi/v/asai.svg)](https://pypi.python.org/pypi/asai)
 

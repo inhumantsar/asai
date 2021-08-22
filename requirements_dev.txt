@@ -3,7 +3,7 @@ bump2version==1.0.1
 coverage==5.5
 isort==5.9.3
 pdoc3==0.10.0
-pydocstyle==6.1.1
+pydocstyle[toml]==6.1.1
 pytest-cov==2.12.1
 pytest==6.2.4
 tox==3.24.3
@@ -11,3 +11,4 @@ twine==3.4.2
 typed-ast==1.4.3
 watchdog==2.1.4
 wheel==0.36.2
+toml==0.10.2

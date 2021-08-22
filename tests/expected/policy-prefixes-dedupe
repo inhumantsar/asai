@@ -1,0 +1,34 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Sid-baDfw",
+            "Effect": "Allow",
+            "Action": [
+                "sqs:AddPermission",
+                "sqs:ChangeMessageVisibility",
+                "sqs:ChangeMessageVisibilityBatch",
+                "sqs:CreateQueue",
+                "sqs:DeleteMessage",
+                "sqs:DeleteMessageBatch",
+                "sqs:DeleteQueue",
+                "sqs:GetQueueAttributes",
+                "sqs:GetQueueUrl",
+                "sqs:ListDeadLetterSourceQueues",
+                "sqs:ListQueueTags",
+                "sqs:ListQueues",
+                "sqs:PurgeQueue",
+                "sqs:ReceiveMessage",
+                "sqs:RemovePermission",
+                "sqs:SendMessage",
+                "sqs:SendMessageBatch",
+                "sqs:SetQueueAttributes",
+                "sqs:TagQueue",
+                "sqs:UntagQueue"
+            ],
+            "Resource": [
+                "arn:aws:sqs:<region>:<account_ID>:<queue_name>"
+            ]
+        }
+    ]
+}

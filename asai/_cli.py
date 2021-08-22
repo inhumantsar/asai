@@ -1,16 +1,103 @@
 """Console script for asai."""
 import sys
+from pprint import pprint
+from types import FunctionType
 from typing import List
 
 import click
 
 import asai
+from asai.models import AWSPolicy, AWSPolicyStatement, AWSService
 
 
 @click.group()
 def cli():
     """ASAI can find the available actions, conditions, and other useful IAM information for AWS services."""
     pass
+
+
+@cli.command("policy")
+@click.option(
+    "-p",
+    "--prefix",
+    multiple=True,
+    default=[],
+    help="Specific service prefix. Can be used multiple times.",
+)
+@click.option(
+    "--all-global",
+    is_flag=True,
+    help="Include all global services in policy scaffold.",
+)
+@click.option(
+    "--all-regional",
+    is_flag=True,
+    help="Include all global services in policy scaffold.",
+)
+@click.option(
+    "-s",
+    "--search",
+    multiple=True,
+    default=[],
+    help="Include all search results. Can be used multiple times.",
+)
+@click.option(
+    "--wildcard",
+    is_flag=True,
+    help="Wildcard the actions list of all specified services.",
+)
+@click.option(
+    "--group",
+    is_flag=True,
+    help="Group services by parameter.",
+)
+def policy(
+    prefix: List[str],
+    all_global: bool,
+    all_regional: bool,
+    search: List[str],
+    wildcard: bool,
+    group: bool,
+):
+    """
+    Generate an IAM policy scaffold using specified services.
+
+    When multiple service options are specified, they will be combined into a
+    single policy.
+
+    If `--group` is set, then the policy will contain multiple statements for each
+    parameter. eg: Setting `--prefix ssm --prefix ec2 --all-global --search
+    container` will result in four statements, one for SSM, one for EC2, one for
+    all global services, and one for "container" search results. These will
+    *not* be de-duped.
+
+    If no service options are specified, a policy scaffold with all services
+    will be created. Using `--group` here will result in each service getting its own
+    policy statement.
+    """
+    all_services = asai.get_services()
+    services = []
+    add_to_services: FunctionType = services.append if group else services.extend
+
+    for p in prefix:
+        add_to_services([asai.get_service_by_prefix(p, service_list=all_services)])
+    if all_global:
+        add_to_services(asai.get_global_services(service_list=all_services))
+    if all_regional:
+        add_to_services(asai.get_regional_services(service_list=all_services))
+    for s in search:
+        add_to_services(
+            [i[1] for i in asai.search_services(s, service_list=all_services)]
+        )
+
+    if not services:
+        services = [[s] for s in all_services] if group else all_services
+
+    if group:
+        statements = [AWSPolicyStatement.from_services(s, wildcard) for s in services]
+        click.echo(AWSPolicy(statements).json)
+    else:
+        click.echo(AWSPolicy.from_services(services, wildcard).json)
 
 
 @cli.group("services")
@@ -35,15 +122,13 @@ def no_arn():
 @aws_services.command("global")
 def global_services():
     """List all services which aren't tied to specific regions."""
-    services = asai.get_services()
-    _echo_service_prefixes([s for s in services if not asai.service_is_regional(s)])
+    _echo_service_prefixes(asai.get_global_services())
 
 
 @aws_services.command()
 def regional():
     """List all services which are tied to specific regions."""
-    services = asai.get_services()
-    _echo_service_prefixes([s for s in services if asai.service_is_regional(s)])
+    _echo_service_prefixes(asai.get_regional_services())
 
 
 @aws_services.command()
@@ -118,7 +203,7 @@ def actions_wildcard(prefix: str):  # noqa: D301
     PREFIX is a service's short name. eg: ec2, ssm, or s3.
     """
     service = _get_service_by_prefix(prefix)
-    for action in asai.get_actions_with_wildcards(service):
+    for action in service.action_wildcards:
         click.echo(action)
 
 
@@ -143,13 +228,13 @@ def info(prefix: str):
         click.echo(f"  - {condition_key}")
 
 
-def _echo_service_prefixes(services: List[asai.AWSService]):
+def _echo_service_prefixes(services: List[AWSService]):
     svc_ids = sorted(set([s.StringPrefix for s in services]))
     for svc in svc_ids:
         click.echo(svc)
 
 
-def _get_service_by_prefix(prefix: str) -> asai.AWSService:
+def _get_service_by_prefix(prefix: str) -> AWSService:
     service = asai.get_service_by_prefix(prefix)
     if not service:
         click.echo(f"{prefix} was not found in the service list.", err=True)

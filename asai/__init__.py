@@ -27,9 +27,7 @@ from ._backend import (
 )
 
 __all__ = [
-    "models.AWSService",
-    "models.AWSPolicyStatement",
-    "models.AWSPolicy",
+    "models",
     "get_actions",
     "get_policies",
     "get_service_by_prefix",

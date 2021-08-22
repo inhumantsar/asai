@@ -5,7 +5,7 @@ from os.path import join, dirname
 from setuptools import setup, find_packages
 
 GITHUB_URL = "https://github.com/inhumantsar/asai"
-VERSION = "0.1.0"
+VERSION = "0.1.3"
 
 
 def read(fname):

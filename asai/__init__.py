@@ -12,10 +12,11 @@ This was written to make building detailed IAM policies with regional permission
 """
 
 from dataclasses import dataclass, field
+from typing import List
 
 __author__ = """Shaun Martin"""
 __email__ = "inhumantsar@protonmail.com"
-__version__ = "0.1.0"
+__version__ = "0.1.3"
 
 
 @dataclass(order=True)
@@ -25,11 +26,11 @@ class AWSService:
     name: str
     # matching JSON keys for the rest because i'm lazy
     StringPrefix: str
-    Actions: list[str]
+    Actions: List[str]
     HasResource: bool
     ARNFormat: str = field(default="")
     ARNRegex: str = field(default="")
-    conditionKeys: list[str] = field(default_factory=lambda: [])
+    conditionKeys: List[str] = field(default_factory=lambda: [])
 
 
 from ._backend import (

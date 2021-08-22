@@ -1,5 +1,6 @@
 """Console script for asai."""
 import sys
+from typing import List
 
 import click
 
@@ -142,7 +143,7 @@ def info(prefix: str):
         click.echo(f"  - {condition_key}")
 
 
-def _echo_service_prefixes(services: list[asai.AWSService]):
+def _echo_service_prefixes(services: List[asai.AWSService]):
     svc_ids = sorted(set([s.StringPrefix for s in services]))
     for svc in svc_ids:
         click.echo(svc)

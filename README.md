@@ -1,4 +1,4 @@
-# AWS Service Authorization Information
+# AWS Service Authorization Information (ASAI) v0.1.3
 
 [![PyPI](https://img.shields.io/pypi/v/asai.svg)](https://pypi.python.org/pypi/asai)
 
@@ -24,11 +24,11 @@ List or search for services by attribute.
 
 Available commands:
 
-* all       List all service prefixes.
-* global    List all services which aren't tied to specific regions.
-* no-arn    List all services which don't have an ARN format.
-* regional  List all services which are tied to specific regions.
-* search    Search for a service by name or prefix.
+* `all`       List all service prefixes.
+* `global`    List all services which aren't tied to specific regions.
+* `no-arn`    List all services which don't have an ARN format.
+* `regional`  List all services which are tied to specific regions.
+* `search`    Search for a service by name or prefix.
 
 ### Individual Services
 
@@ -38,8 +38,8 @@ Get information on a single service.
 
 Available commands:
 
-* actions           List a service's actions.
-* actions-wildcard  List a service's actions, wildcarding common prefixes.
-* arn-format        Display a service's ARN format description.
-* arn-regex         Display a service's ARN Regex string.
-* info              Print all available service information.
+* `actions`           List a service's actions.
+* `actions-wildcard`  List a service's actions, wildcarding common prefixes.
+* `arn-format`        Display a service's ARN format description.
+* `arn-regex`         Display a service's ARN Regex string.
+* `info`              Print all available service information.

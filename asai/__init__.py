@@ -14,6 +14,7 @@ __author__ = """Shaun Martin"""
 __email__ = "inhumantsar@protonmail.com"
 __version__ = "0.2.0"
 
+import models
 
 from ._backend import (
     get_actions,
@@ -26,7 +27,9 @@ from ._backend import (
 )
 
 __all__ = [
-    "AWSService",
+    "models.AWSService",
+    "models.AWSPolicyStatement",
+    "models.AWSPolicy",
     "get_actions",
     "get_policies",
     "get_service_by_prefix",

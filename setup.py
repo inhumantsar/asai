@@ -1,11 +1,12 @@
 """ASAI can find the available actions, conditions, and other useful IAM information for AWS services."""
 
+from os.path import dirname, join
 from pathlib import Path
-from os.path import join, dirname
-from setuptools import setup, find_packages
+
+from setuptools import find_packages, setup
 
 GITHUB_URL = "https://github.com/inhumantsar/asai"
-VERSION = "0.1.3"
+VERSION = "0.2.0"
 
 
 def read(fname):

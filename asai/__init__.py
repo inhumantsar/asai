@@ -12,10 +12,9 @@ This was written to make building detailed IAM policies with regional permission
 """
 __author__ = """Shaun Martin"""
 __email__ = "inhumantsar@protonmail.com"
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
-import models
-
+from . import models
 from ._backend import (
     get_actions,
     get_global_services,

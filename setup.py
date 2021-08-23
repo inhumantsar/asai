@@ -6,7 +6,7 @@ from pathlib import Path
 from setuptools import find_packages, setup
 
 GITHUB_URL = "https://github.com/inhumantsar/asai"
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 
 
 def read(fname):

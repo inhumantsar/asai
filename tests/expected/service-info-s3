@@ -121,7 +121,7 @@ Actions:
   - UpdateJobPriority
   - UpdateJobStatus
 
-ARN Format: arn:aws:s3:::<bucket_name>/<key_name>
+ARN Format: arn:aws:s3:::${BucketName}/${KeyName}
 ARN Regex: ^arn:aws:s3:::.+
 
 Condition Keys:

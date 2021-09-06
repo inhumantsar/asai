@@ -2,7 +2,7 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "Sid-HgnAF",
+            "Sid": "Sid-9cd842b2e1c23357811744cffc198279",
             "Effect": "Allow",
             "Action": [
                 "ecr-public:BatchCheckLayerAvailability",
@@ -140,55 +140,55 @@
                 "arn:aws:ecs:<region>:<account_ID>:<resource_type>/<relative_ID>"
             ],
             "Condition": {
-                "SomeCondition-gxuXY": {
+                "SomeCondition-qHlcj": {
                     "aws:RequestTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-BsuMK": {
+                "SomeCondition-mAWzv": {
                     "aws:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-huncM": {
+                "SomeCondition-SmDXU": {
                     "aws:TagKeys": "...some value..."
                 },
-                "SomeCondition-JHWnv": {
+                "SomeCondition-QdRFy": {
                     "ecr-public:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-yTLXJ": {
+                "SomeCondition-lkDHb": {
                     "ecr:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-Dbyer": {
+                "SomeCondition-QaDGR": {
                     "ecs:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-qbgcC": {
+                "SomeCondition-DCivs": {
                     "ecs:capacity-provider": "...some value..."
                 },
-                "SomeCondition-ePRbk": {
+                "SomeCondition-elUox": {
                     "ecs:cluster": "...some value..."
                 },
-                "SomeCondition-uwXlL": {
+                "SomeCondition-cPaTf": {
                     "ecs:container-instances": "...some value..."
                 },
-                "SomeCondition-TWBEj": {
+                "SomeCondition-cPAtp": {
                     "ecs:container-name": "...some value..."
                 },
-                "SomeCondition-yzwcR": {
+                "SomeCondition-gYNol": {
                     "ecs:enable-execute-command": "...some value..."
                 },
-                "SomeCondition-VtXUN": {
+                "SomeCondition-gKrsp": {
                     "ecs:service": "...some value..."
                 },
-                "SomeCondition-vGuEb": {
+                "SomeCondition-hveOQ": {
                     "ecs:task": "...some value..."
                 },
-                "SomeCondition-GqxtE": {
+                "SomeCondition-ClNgt": {
                     "ecs:task-definition": "...some value..."
                 },
-                "SomeCondition-TaIom": {
+                "SomeCondition-QYUAX": {
                     "emr-containers:ExecutionRoleArn": "...some value..."
                 }
             }
         },
         {
-            "Sid": "Sid-UmEJw",
+            "Sid": "Sid-f3c072ce7eda0d95f2d00890f56e5218",
             "Effect": "Allow",
             "Action": [
                 "access-analyzer:ApplyArchiveRule",
@@ -406,64 +406,64 @@
             "Resource": [
                 "arn:${Partition}:access-analyzer:${Region}:${Account}:analyzer/${AnalyzerName}",
                 "arn:aws:iam::<namespace>:<relative-id>",
-                "arn:aws:ram:<region>:<account-id>:resource-share/<resource-uuid>"
+                "arn:aws:ram:${Region}:${AccountId}:resource-share/${Resource-UUID}"
             ],
             "Condition": {
-                "SomeCondition-HzYNL": {
+                "SomeCondition-bFfgj": {
                     "aws:RequestTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-RjhDs": {
+                "SomeCondition-Lfdyx": {
                     "aws:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-ipsYh": {
+                "SomeCondition-nhHCt": {
                     "aws:TagKeys": "...some value..."
                 },
-                "SomeCondition-BmAsd": {
+                "SomeCondition-FtIsY": {
                     "iam:AWSServiceName": "...some value..."
                 },
-                "SomeCondition-abMPI": {
+                "SomeCondition-xnZyu": {
                     "iam:AssociatedResourceArn": "...some value..."
                 },
-                "SomeCondition-xSCkN": {
+                "SomeCondition-GlneW": {
                     "iam:OrganizationsPolicyId": "...some value..."
                 },
-                "SomeCondition-xkKwp": {
+                "SomeCondition-WMhqY": {
                     "iam:PassedToService": "...some value..."
                 },
-                "SomeCondition-uZpix": {
+                "SomeCondition-rdWOj": {
                     "iam:PermissionsBoundary": "...some value..."
                 },
-                "SomeCondition-lRNGr": {
+                "SomeCondition-fGpIo": {
                     "iam:PolicyARN": "...some value..."
                 },
-                "SomeCondition-rEtDG": {
+                "SomeCondition-zInUW": {
                     "iam:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-VyvFf": {
+                "SomeCondition-aOmDZ": {
                     "ram:AllowsExternalPrincipals": "...some value..."
                 },
-                "SomeCondition-GyQgN": {
+                "SomeCondition-drcJa": {
                     "ram:PermissionArn": "...some value..."
                 },
-                "SomeCondition-TDyrt": {
+                "SomeCondition-cXQTR": {
                     "ram:PermissionResourceType": "...some value..."
                 },
-                "SomeCondition-RDXec": {
+                "SomeCondition-RysOY": {
                     "ram:Principal": "...some value..."
                 },
-                "SomeCondition-YObtr": {
+                "SomeCondition-iYQbr": {
                     "ram:RequestedAllowsExternalPrincipals": "...some value..."
                 },
-                "SomeCondition-LkowP": {
+                "SomeCondition-QCgab": {
                     "ram:RequestedResourceType": "...some value..."
                 },
-                "SomeCondition-INvOY": {
+                "SomeCondition-GqVKO": {
                     "ram:ResourceArn": "...some value..."
                 },
-                "SomeCondition-HTOfG": {
+                "SomeCondition-pRXJZ": {
                     "ram:ResourceShareName": "...some value..."
                 },
-                "SomeCondition-ASsvk": {
+                "SomeCondition-JZXnp": {
                     "ram:ShareOwnerAccountId": "...some value..."
                 }
             }

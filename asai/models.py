@@ -1,5 +1,6 @@
 """JSON-friendly models representing AWS resources."""
 
+import hashlib
 import json
 import random
 import re
@@ -70,7 +71,12 @@ class AWSPolicyStatement:
 
     def from_services(services: List[AWSService], wildcard=False):
         """Create object using service information, optionally wildcarding actions."""
-        sid = f"Sid-{_randomness()}" if len(services) > 1 else services[0].name
+        sid = services[0].name
+        # predictable sids are useful intesting
+        if len(services) > 1:
+            service_names = "".join([s.name for s in services]).encode("utf-8")
+            sid = "Sid-" + hashlib.md5(service_names).hexdigest()
+
         actions, resources = [], []
         conditions_list = []
         for s in services:

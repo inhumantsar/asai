@@ -77,10 +77,12 @@ def test_cli_single_service():
     assert result.exit_code == 0
     assert all([i in result.output for i in types])
     for cmd, expected_results in expected.items():
-        print(["service", *cmd.split("-")])
+        print(["service", *cmd.split("_")])
         result = runner.invoke(cli.cli, args=["service", *cmd.split("_")])
         assert result.exit_code == 0
-        assert all([i in result.output for i in expected_results])
+        for i in expected_results.splitlines():
+            assert i in result.output
+        # assert all([i in result.output for i in expected_results])
 
 
 def test_cli_policy():
@@ -108,33 +110,30 @@ def test_cli_policy():
         ("searches-group", "-s container -s access --group"),
         ("searches-prefixes-group", "-s container -s access -p ecs -p sqs --group"),
     ]
-    expected = {i[0]: json.loads(_read(f"policy-{i[0]}")) for i in commands}
     for (k, cmd) in commands:
         args = ["policy", *cmd.split()]
-        print(args)
+        print(f"test: {k} args: {args}")
+        expected = json.loads(_read(f"policy-{k}"))
         result = runner.invoke(cli.cli, args=args)
         output = json.loads(result.output)
-        assert expected[k]["Version"] == output["Version"]
-        estatements = expected[k]["Statement"]
-        for statement in output["Statement"]:
-            assert any([statement["Action"] == e["Action"] for e in estatements])
-            if "Resource" in statement.keys():
-                assert any(
-                    [
-                        statement["Resource"] == e["Resource"]
-                        for e in estatements
-                        if "Resource" in e.keys()
-                    ]
-                )
-            if "Condition" in statement.keys():
-                econs = [e["Condition"] for e in estatements if "Condition" in e.keys()]
-                out_keys = [
-                    list(v.keys())[0] for _, v in statement["Condition"].items()
-                ]
-                assert any(
-                    [
-                        sorted(out_keys)
-                        == sorted([list(v.keys())[0] for _, v in e.items()])
-                        for e in econs
-                    ]
-                )
+
+        assert expected["Version"] == output["Version"]
+
+        found_st = sorted(output["Statement"], key=lambda x: x["Sid"])
+        exp_st = sorted(expected["Statement"], key=lambda x: x["Sid"])
+        # print([i["Sid"] for i in found_statements])
+        # print([i["Sid"] for i in expected_statements])
+        assert len(found_st) == len(exp_st)
+        for i in range(len(found_st)):
+            assert found_st[i]["Sid"] == exp_st[i]["Sid"]
+            assert found_st[i]["Action"] == exp_st[i]["Action"]
+
+            if "Resource" in exp_st[i].keys():
+                assert found_st[i]["Resource"] == exp_st[i]["Resource"]
+
+            if "Condition" in exp_st[i].keys():
+                exp_con_items = exp_st[i]["Condition"].items()
+                exp_cons = [list(v.keys())[0] for _, v in exp_con_items]
+                for _, condition in found_st[i]["Condition"].items():
+                    for con in list(condition.keys()):
+                        assert con in sorted(exp_cons)

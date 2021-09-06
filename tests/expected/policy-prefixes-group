@@ -22,10 +22,12 @@
                 "ec2:AssociateDhcpOptions",
                 "ec2:AssociateEnclaveCertificateIamRole",
                 "ec2:AssociateIamInstanceProfile",
+                "ec2:AssociateInstanceEventWindow",
                 "ec2:AssociateRouteTable",
                 "ec2:AssociateSubnetCidrBlock",
                 "ec2:AssociateTransitGatewayMulticastDomain",
                 "ec2:AssociateTransitGatewayRouteTable",
+                "ec2:AssociateTrunkInterface",
                 "ec2:AssociateVpcCidrBlock",
                 "ec2:AttachClassicLinkVpc",
                 "ec2:AttachInternetGateway",
@@ -61,6 +63,7 @@
                 "ec2:CreateFlowLogs",
                 "ec2:CreateFpgaImage",
                 "ec2:CreateImage",
+                "ec2:CreateInstanceEventWindow",
                 "ec2:CreateInstanceExportTask",
                 "ec2:CreateInternetGateway",
                 "ec2:CreateKeyPair",
@@ -87,6 +90,7 @@
                 "ec2:CreateSpotDatafeedSubscription",
                 "ec2:CreateStoreImageTask",
                 "ec2:CreateSubnet",
+                "ec2:CreateSubnetCidrReservation",
                 "ec2:CreateTags",
                 "ec2:CreateTrafficMirrorFilter",
                 "ec2:CreateTrafficMirrorFilterRule",
@@ -119,6 +123,7 @@
                 "ec2:DeleteFleets",
                 "ec2:DeleteFlowLogs",
                 "ec2:DeleteFpgaImage",
+                "ec2:DeleteInstanceEventWindow",
                 "ec2:DeleteInternetGateway",
                 "ec2:DeleteKeyPair",
                 "ec2:DeleteLaunchTemplate",
@@ -141,6 +146,7 @@
                 "ec2:DeleteSnapshot",
                 "ec2:DeleteSpotDatafeedSubscription",
                 "ec2:DeleteSubnet",
+                "ec2:DeleteSubnetCidrReservation",
                 "ec2:DeleteTags",
                 "ec2:DeleteTrafficMirrorFilter",
                 "ec2:DeleteTrafficMirrorFilterRule",
@@ -212,6 +218,7 @@
                 "ec2:DescribeInstanceAttribute",
                 "ec2:DescribeInstanceCreditSpecifications",
                 "ec2:DescribeInstanceEventNotificationAttributes",
+                "ec2:DescribeInstanceEventWindows",
                 "ec2:DescribeInstanceStatus",
                 "ec2:DescribeInstanceTypeOfferings",
                 "ec2:DescribeInstanceTypes",
@@ -275,6 +282,7 @@
                 "ec2:DescribeTransitGatewayRouteTables",
                 "ec2:DescribeTransitGatewayVpcAttachments",
                 "ec2:DescribeTransitGateways",
+                "ec2:DescribeTrunkInterfaceAssociations",
                 "ec2:DescribeVolumeAttribute",
                 "ec2:DescribeVolumeStatus",
                 "ec2:DescribeVolumes",
@@ -309,10 +317,12 @@
                 "ec2:DisassociateClientVpnTargetNetwork",
                 "ec2:DisassociateEnclaveCertificateIamRole",
                 "ec2:DisassociateIamInstanceProfile",
+                "ec2:DisassociateInstanceEventWindow",
                 "ec2:DisassociateRouteTable",
                 "ec2:DisassociateSubnetCidrBlock",
                 "ec2:DisassociateTransitGatewayMulticastDomain",
                 "ec2:DisassociateTransitGatewayRouteTable",
+                "ec2:DisassociateTrunkInterface",
                 "ec2:DisassociateVpcCidrBlock",
                 "ec2:EnableEbsEncryptionByDefault",
                 "ec2:EnableFastSnapshotRestores",
@@ -345,6 +355,7 @@
                 "ec2:GetPasswordData",
                 "ec2:GetReservedInstancesExchangeQuote",
                 "ec2:GetSerialConsoleAccessStatus",
+                "ec2:GetSubnetCidrReservations",
                 "ec2:GetTransitGatewayAttachmentPropagations",
                 "ec2:GetTransitGatewayMulticastDomainAssociations",
                 "ec2:GetTransitGatewayPrefixListReferences",
@@ -372,6 +383,7 @@
                 "ec2:ModifyInstanceCapacityReservationAttributes",
                 "ec2:ModifyInstanceCreditSpecification",
                 "ec2:ModifyInstanceEventStartTime",
+                "ec2:ModifyInstanceEventWindow",
                 "ec2:ModifyInstanceMetadataOptions",
                 "ec2:ModifyInstancePlacement",
                 "ec2:ModifyLaunchTemplate",
@@ -463,244 +475,244 @@
                 "arn:aws:ec2:<region>:<account>:<resourceType>/<resourcePath>"
             ],
             "Condition": {
-                "SomeCondition-gASZc": {
+                "SomeCondition-HWywI": {
                     "aws:RequestTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-jOUvm": {
+                "SomeCondition-geLAZ": {
                     "aws:ResourceTag/": "...some value..."
                 },
-                "SomeCondition-JosnG": {
+                "SomeCondition-epDvN": {
                     "aws:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-MDdyZ": {
+                "SomeCondition-EkzrM": {
                     "aws:TagKeys": "...some value..."
                 },
-                "SomeCondition-OjsXD": {
+                "SomeCondition-xqTzj": {
                     "ec2:AccepterVpc": "...some value..."
                 },
-                "SomeCondition-vLMKS": {
+                "SomeCondition-uPjXV": {
                     "ec2:AssociatePublicIpAddress": "...some value..."
                 },
-                "SomeCondition-PnuND": {
+                "SomeCondition-HdtZO": {
                     "ec2:Attribute/${AttributeName}": "...some value..."
                 },
-                "SomeCondition-aRJrX": {
+                "SomeCondition-ndwcf": {
                     "ec2:AuthenticationType": "...some value..."
                 },
-                "SomeCondition-ruaRE": {
+                "SomeCondition-gflCi": {
                     "ec2:AuthorizedService": "...some value..."
                 },
-                "SomeCondition-VcHOy": {
+                "SomeCondition-wqKRa": {
                     "ec2:AuthorizedUser": "...some value..."
                 },
-                "SomeCondition-rvYxm": {
+                "SomeCondition-Unfim": {
                     "ec2:AutoPlacement": "...some value..."
                 },
-                "SomeCondition-IxUJr": {
+                "SomeCondition-VhiIa": {
                     "ec2:AvailabilityZone": "...some value..."
                 },
-                "SomeCondition-QYWdq": {
+                "SomeCondition-TYuxh": {
                     "ec2:ClientRootCertificateChainArn": "...some value..."
                 },
-                "SomeCondition-ktMrK": {
+                "SomeCondition-EtnTX": {
                     "ec2:CloudwatchLogGroupArn": "...some value..."
                 },
-                "SomeCondition-oqNPW": {
+                "SomeCondition-BPhue": {
                     "ec2:CloudwatchLogStreamArn": "...some value..."
                 },
-                "SomeCondition-QtxYf": {
+                "SomeCondition-nSFIs": {
                     "ec2:CreateAction": "...some value..."
                 },
-                "SomeCondition-PROXo": {
+                "SomeCondition-Tnkec": {
                     "ec2:DPDTimeoutSeconds": "...some value..."
                 },
-                "SomeCondition-ewZAr": {
+                "SomeCondition-rxWgI": {
                     "ec2:DirectoryArn": "...some value..."
                 },
-                "SomeCondition-vEIsJ": {
+                "SomeCondition-Yysxn": {
                     "ec2:EbsOptimized": "...some value..."
                 },
-                "SomeCondition-zBCsM": {
+                "SomeCondition-pgJnY": {
                     "ec2:ElasticGpuType": "...some value..."
                 },
-                "SomeCondition-yNhpc": {
+                "SomeCondition-kbdtc": {
                     "ec2:Encrypted": "...some value..."
                 },
-                "SomeCondition-PwBDS": {
+                "SomeCondition-yhbEO": {
                     "ec2:GatewayType": "...some value..."
                 },
-                "SomeCondition-amMTK": {
+                "SomeCondition-jXLgk": {
                     "ec2:HostRecovery": "...some value..."
                 },
-                "SomeCondition-IavsX": {
+                "SomeCondition-SsRWb": {
                     "ec2:IKEVersions": "...some value..."
                 },
-                "SomeCondition-aebnS": {
+                "SomeCondition-niegN": {
                     "ec2:ImageType": "...some value..."
                 },
-                "SomeCondition-hMBjY": {
+                "SomeCondition-kHRmi": {
                     "ec2:InsideTunnelCidr": "...some value..."
                 },
-                "SomeCondition-mrRSV": {
+                "SomeCondition-KCofk": {
                     "ec2:InstanceMarketType": "...some value..."
                 },
-                "SomeCondition-ByNxH": {
+                "SomeCondition-OlrMe": {
                     "ec2:InstanceProfile": "...some value..."
                 },
-                "SomeCondition-tdKvw": {
+                "SomeCondition-DQEzr": {
                     "ec2:InstanceType": "...some value..."
                 },
-                "SomeCondition-SGRyE": {
+                "SomeCondition-GRCAp": {
                     "ec2:IsLaunchTemplateResource": "...some value..."
                 },
-                "SomeCondition-dxWyH": {
+                "SomeCondition-pyrJt": {
                     "ec2:KeyPairName": "...some value..."
                 },
-                "SomeCondition-GPqfM": {
+                "SomeCondition-eCsUD": {
                     "ec2:LaunchTemplate": "...some value..."
                 },
-                "SomeCondition-UmiTS": {
+                "SomeCondition-rzmZD": {
                     "ec2:MetadataHttpEndpoint": "...some value..."
                 },
-                "SomeCondition-ZYalW": {
+                "SomeCondition-kbaIS": {
                     "ec2:MetadataHttpPutResponseHopLimit": "...some value..."
                 },
-                "SomeCondition-jNnCp": {
+                "SomeCondition-VLBdQ": {
                     "ec2:MetadataHttpTokens": "...some value..."
                 },
-                "SomeCondition-kNDBK": {
+                "SomeCondition-MSakx": {
                     "ec2:NewInstanceProfile": "...some value..."
                 },
-                "SomeCondition-VpErf": {
+                "SomeCondition-RbpBo": {
                     "ec2:OutpostArn": "...some value..."
                 },
-                "SomeCondition-PdQsU": {
+                "SomeCondition-xpudj": {
                     "ec2:Owner": "...some value..."
                 },
-                "SomeCondition-gMibd": {
+                "SomeCondition-lsrDu": {
                     "ec2:ParentSnapshot": "...some value..."
                 },
-                "SomeCondition-AzbRC": {
+                "SomeCondition-qtsDf": {
                     "ec2:ParentVolume": "...some value..."
                 },
-                "SomeCondition-PbFdf": {
+                "SomeCondition-pNsyA": {
                     "ec2:Permission": "...some value..."
                 },
-                "SomeCondition-HkQAz": {
+                "SomeCondition-fjnqI": {
                     "ec2:Phase1DHGroupNumbers": "...some value..."
                 },
-                "SomeCondition-HtADG": {
+                "SomeCondition-zDyXG": {
                     "ec2:Phase1EncryptionAlgorithms": "...some value..."
                 },
-                "SomeCondition-GYlcO": {
+                "SomeCondition-yKOWI": {
                     "ec2:Phase1IntegrityAlgorithms": "...some value..."
                 },
-                "SomeCondition-VTFQy": {
+                "SomeCondition-lqAfe": {
                     "ec2:Phase1LifetimeSeconds": "...some value..."
                 },
-                "SomeCondition-AEkch": {
+                "SomeCondition-PHdNJ": {
                     "ec2:Phase2DHGroupNumbers": "...some value..."
                 },
-                "SomeCondition-EsrMP": {
+                "SomeCondition-Gvsfb": {
                     "ec2:Phase2EncryptionAlgorithms": "...some value..."
                 },
-                "SomeCondition-JZsnI": {
+                "SomeCondition-pLwMs": {
                     "ec2:Phase2IntegrityAlgorithms": "...some value..."
                 },
-                "SomeCondition-lnMUK": {
+                "SomeCondition-bungp": {
                     "ec2:Phase2LifetimeSeconds": "...some value..."
                 },
-                "SomeCondition-ZUhJl": {
+                "SomeCondition-zBFyI": {
                     "ec2:PlacementGroup": "...some value..."
                 },
-                "SomeCondition-Beyxr": {
+                "SomeCondition-ziNKd": {
                     "ec2:PlacementGroupStrategy": "...some value..."
                 },
-                "SomeCondition-rOuDN": {
+                "SomeCondition-UkeYs": {
                     "ec2:PresharedKeys": "...some value..."
                 },
-                "SomeCondition-CJdEz": {
+                "SomeCondition-KPhmx": {
                     "ec2:ProductCode": "...some value..."
                 },
-                "SomeCondition-EKZcP": {
+                "SomeCondition-uKVok": {
                     "ec2:Public": "...some value..."
                 },
-                "SomeCondition-frxZb": {
+                "SomeCondition-uQrHP": {
                     "ec2:Quantity": "...some value..."
                 },
-                "SomeCondition-kQEGd": {
+                "SomeCondition-PhOYc": {
                     "ec2:Region": "...some value..."
                 },
-                "SomeCondition-IQgvP": {
+                "SomeCondition-kGNYy": {
                     "ec2:RekeyFuzzPercentage": "...some value..."
                 },
-                "SomeCondition-tQjpi": {
+                "SomeCondition-qQLhH": {
                     "ec2:RekeyMarginTimeSeconds": "...some value..."
                 },
-                "SomeCondition-uDCXK": {
+                "SomeCondition-yMgVb": {
                     "ec2:RequesterVpc": "...some value..."
                 },
-                "SomeCondition-MfDjt": {
+                "SomeCondition-EzMoT": {
                     "ec2:ReservedInstancesOfferingType": "...some value..."
                 },
-                "SomeCondition-xvFzD": {
+                "SomeCondition-OiBsY": {
                     "ec2:ResourceTag/": "...some value..."
                 },
-                "SomeCondition-QCBOs": {
+                "SomeCondition-BPFdu": {
                     "ec2:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-NLTRl": {
+                "SomeCondition-dDtqF": {
                     "ec2:RoleDelivery": "...some value..."
                 },
-                "SomeCondition-MnLav": {
+                "SomeCondition-fAgVO": {
                     "ec2:RootDeviceType": "...some value..."
                 },
-                "SomeCondition-HZxGK": {
+                "SomeCondition-tFiah": {
                     "ec2:RoutingType": "...some value..."
                 },
-                "SomeCondition-QmOYA": {
+                "SomeCondition-nbjJi": {
                     "ec2:SamlProviderArn": "...some value..."
                 },
-                "SomeCondition-OnbyU": {
+                "SomeCondition-uAYrc": {
                     "ec2:ServerCertificateArn": "...some value..."
                 },
-                "SomeCondition-SbKYy": {
+                "SomeCondition-QNPpM": {
                     "ec2:SnapshotTime": "...some value..."
                 },
-                "SomeCondition-SLwbF": {
+                "SomeCondition-CoKUl": {
                     "ec2:SourceInstanceARN": "...some value..."
                 },
-                "SomeCondition-etlAc": {
+                "SomeCondition-SEYRk": {
                     "ec2:SourceOutpostArn": "...some value..."
                 },
-                "SomeCondition-JdrNt": {
+                "SomeCondition-yYtfG": {
                     "ec2:Subnet": "...some value..."
                 },
-                "SomeCondition-dgwfK": {
+                "SomeCondition-xtiFz": {
                     "ec2:Tenancy": "...some value..."
                 },
-                "SomeCondition-sOoGH": {
+                "SomeCondition-xyWSg": {
                     "ec2:VolumeIops": "...some value..."
                 },
-                "SomeCondition-ZQyJH": {
+                "SomeCondition-jWpqr": {
                     "ec2:VolumeSize": "...some value..."
                 },
-                "SomeCondition-nLxmA": {
+                "SomeCondition-pnZgO": {
                     "ec2:VolumeThroughput": "...some value..."
                 },
-                "SomeCondition-ApKYX": {
+                "SomeCondition-goVGz": {
                     "ec2:VolumeType": "...some value..."
                 },
-                "SomeCondition-LjvhY": {
+                "SomeCondition-gekms": {
                     "ec2:Vpc": "...some value..."
                 },
-                "SomeCondition-mNDVh": {
+                "SomeCondition-NjoOt": {
                     "ec2:VpceServiceName": "...some value..."
                 },
-                "SomeCondition-lZgbd": {
+                "SomeCondition-STDCd": {
                     "ec2:VpceServiceOwner": "...some value..."
                 },
-                "SomeCondition-kzDJv": {
+                "SomeCondition-dMYVx": {
                     "ec2:VpceServicePrivateDnsName": "...some value..."
                 }
             }
@@ -768,40 +780,40 @@
                 "arn:aws:ecs:<region>:<account_ID>:<resource_type>/<relative_ID>"
             ],
             "Condition": {
-                "SomeCondition-ThOQc": {
+                "SomeCondition-dZVrL": {
                     "aws:RequestTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-lBcZp": {
+                "SomeCondition-kZmEK": {
                     "aws:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-EekHc": {
+                "SomeCondition-dkcFE": {
                     "aws:TagKeys": "...some value..."
                 },
-                "SomeCondition-qkwbu": {
+                "SomeCondition-GZFJp": {
                     "ecs:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-MFxON": {
+                "SomeCondition-jiBKb": {
                     "ecs:capacity-provider": "...some value..."
                 },
-                "SomeCondition-HUIDs": {
+                "SomeCondition-xocwm": {
                     "ecs:cluster": "...some value..."
                 },
-                "SomeCondition-lRgJq": {
+                "SomeCondition-talAY": {
                     "ecs:container-instances": "...some value..."
                 },
-                "SomeCondition-OhxtQ": {
+                "SomeCondition-yOwrf": {
                     "ecs:container-name": "...some value..."
                 },
-                "SomeCondition-qySEP": {
+                "SomeCondition-lUIWd": {
                     "ecs:enable-execute-command": "...some value..."
                 },
-                "SomeCondition-cHUAX": {
+                "SomeCondition-AtMVR": {
                     "ecs:service": "...some value..."
                 },
-                "SomeCondition-cfbXV": {
+                "SomeCondition-gdiGI": {
                     "ecs:task": "...some value..."
                 },
-                "SomeCondition-NarAg": {
+                "SomeCondition-XTSeG": {
                     "ecs:task-definition": "...some value..."
                 }
             }

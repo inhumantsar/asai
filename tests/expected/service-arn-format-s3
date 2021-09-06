@@ -1,1 +1,1 @@
-arn:aws:s3:::<bucket_name>/<key_name>
+arn:aws:s3:::${BucketName}/${KeyName}

@@ -2,7 +2,7 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "Sid-MbIkR",
+            "Sid": "Sid-78a30653e40f3f00fb9c68a7d42ab96d",
             "Effect": "Allow",
             "Action": [
                 "a4b:ApproveSkill",
@@ -713,6 +713,7 @@
                 "autoscaling:EnterStandby",
                 "autoscaling:ExecutePolicy",
                 "autoscaling:ExitStandby",
+                "autoscaling:GetPredictiveScalingForecast",
                 "autoscaling:PutLifecycleHook",
                 "autoscaling:PutNotificationConfiguration",
                 "autoscaling:PutScalingPolicy",
@@ -738,14 +739,12 @@
                 "aws-marketplace:CancelAgreementRequest",
                 "aws-marketplace:CancelChangeSet",
                 "aws-marketplace:CompleteTask",
-                "aws-marketplace:CreatePrivateMarketplace",
                 "aws-marketplace:CreatePrivateMarketplaceRequests",
                 "aws-marketplace:DescribeAgreement",
                 "aws-marketplace:DescribeBuilds",
                 "aws-marketplace:DescribeChangeSet",
                 "aws-marketplace:DescribeEntity",
                 "aws-marketplace:DescribePrivateMarketplaceRequests",
-                "aws-marketplace:DescribePrivateMarketplaceStatus",
                 "aws-marketplace:DescribeProcurementSystemConfiguration",
                 "aws-marketplace:DescribeTask",
                 "aws-marketplace:DisassociateProductsFromPrivateMarketplace",
@@ -789,19 +788,26 @@
                 "backup:CreateBackupPlan",
                 "backup:CreateBackupSelection",
                 "backup:CreateBackupVault",
+                "backup:CreateFramework",
+                "backup:CreateReportPlan",
                 "backup:DeleteBackupPlan",
                 "backup:DeleteBackupSelection",
                 "backup:DeleteBackupVault",
                 "backup:DeleteBackupVaultAccessPolicy",
                 "backup:DeleteBackupVaultNotifications",
+                "backup:DeleteFramework",
                 "backup:DeleteRecoveryPoint",
+                "backup:DeleteReportPlan",
                 "backup:DescribeBackupJob",
                 "backup:DescribeBackupVault",
                 "backup:DescribeCopyJob",
+                "backup:DescribeFramework",
                 "backup:DescribeGlobalSettings",
                 "backup:DescribeProtectedResource",
                 "backup:DescribeRecoveryPoint",
                 "backup:DescribeRegionSettings",
+                "backup:DescribeReportJob",
+                "backup:DescribeReportPlan",
                 "backup:DescribeRestoreJob",
                 "backup:DisassociateRecoveryPoint",
                 "backup:ExportBackupPlanTemplate",
@@ -820,23 +826,29 @@
                 "backup:ListBackupSelections",
                 "backup:ListBackupVaults",
                 "backup:ListCopyJobs",
+                "backup:ListFrameworks",
                 "backup:ListProtectedResources",
                 "backup:ListRecoveryPointsByBackupVault",
                 "backup:ListRecoveryPointsByResource",
+                "backup:ListReportJobs",
+                "backup:ListReportPlans",
                 "backup:ListRestoreJobs",
                 "backup:ListTags",
                 "backup:PutBackupVaultAccessPolicy",
                 "backup:PutBackupVaultNotifications",
                 "backup:StartBackupJob",
                 "backup:StartCopyJob",
+                "backup:StartReportJob",
                 "backup:StartRestoreJob",
                 "backup:StopBackupJob",
                 "backup:TagResource",
                 "backup:UntagResource",
                 "backup:UpdateBackupPlan",
+                "backup:UpdateFramework",
                 "backup:UpdateGlobalSettings",
                 "backup:UpdateRecoveryPointLifecycle",
                 "backup:UpdateRegionSettings",
+                "backup:UpdateReportPlan",
                 "batch:CancelJob",
                 "batch:CreateComputeEnvironment",
                 "batch:CreateJobQueue",
@@ -1192,21 +1204,35 @@
                 "chime:UpdateVoiceConnector",
                 "chime:UpdateVoiceConnectorGroup",
                 "chime:ValidateAccountResource",
+                "cloud9:ActivateEC2Remote",
                 "cloud9:CreateEnvironmentEC2",
                 "cloud9:CreateEnvironmentMembership",
+                "cloud9:CreateEnvironmentSSH",
+                "cloud9:CreateEnvironmentToken",
                 "cloud9:DeleteEnvironment",
                 "cloud9:DeleteEnvironmentMembership",
+                "cloud9:DescribeEC2Remote",
                 "cloud9:DescribeEnvironmentMemberships",
                 "cloud9:DescribeEnvironmentStatus",
                 "cloud9:DescribeEnvironments",
+                "cloud9:DescribeSSHRemote",
+                "cloud9:GetEnvironmentConfig",
+                "cloud9:GetEnvironmentSettings",
+                "cloud9:GetMembershipSettings",
+                "cloud9:GetUserPublicKey",
                 "cloud9:GetUserSettings",
                 "cloud9:ListEnvironments",
                 "cloud9:ListTagsForResource",
+                "cloud9:ModifyTemporaryCredentialsOnEnvironmentEC2",
                 "cloud9:TagResource",
                 "cloud9:UntagResource",
                 "cloud9:UpdateEnvironment",
                 "cloud9:UpdateEnvironmentMembership",
+                "cloud9:UpdateEnvironmentSettings",
+                "cloud9:UpdateMembershipSettings",
+                "cloud9:UpdateSSHRemote",
                 "cloud9:UpdateUserSettings",
+                "cloud9:ValidateEnvironmentName",
                 "clouddirectory:AddFacetToObject",
                 "clouddirectory:ApplySchema",
                 "clouddirectory:AttachObject",
@@ -1303,6 +1329,7 @@
                 "cloudformation:GetStackPolicy",
                 "cloudformation:GetTemplate",
                 "cloudformation:GetTemplateSummary",
+                "cloudformation:ImportStacksToStackSet",
                 "cloudformation:ListChangeSets",
                 "cloudformation:ListExports",
                 "cloudformation:ListImports",
@@ -1819,6 +1846,7 @@
                 "codepipeline:DeregisterWebhookWithThirdParty",
                 "codepipeline:DisableStageTransition",
                 "codepipeline:EnableStageTransition",
+                "codepipeline:GetActionType",
                 "codepipeline:GetJobDetails",
                 "codepipeline:GetPipeline",
                 "codepipeline:GetPipelineExecution",
@@ -1845,6 +1873,7 @@
                 "codepipeline:StopPipelineExecution",
                 "codepipeline:TagResource",
                 "codepipeline:UntagResource",
+                "codepipeline:UpdateActionType",
                 "codepipeline:UpdatePipeline",
                 "codestar-connections:CreateConnection",
                 "codestar-connections:CreateHost",
@@ -2134,6 +2163,7 @@
                 "compute-optimizer:GetEC2InstanceRecommendations",
                 "compute-optimizer:GetEC2RecommendationProjectedMetrics",
                 "compute-optimizer:GetEnrollmentStatus",
+                "compute-optimizer:GetEnrollmentStatusesForOrganization",
                 "compute-optimizer:GetLambdaFunctionRecommendations",
                 "compute-optimizer:GetRecommendationSummaries",
                 "compute-optimizer:UpdateEnrollmentStatus",
@@ -2746,6 +2776,7 @@
                 "directconnect:AllocateTransitVirtualInterface",
                 "directconnect:AssociateConnectionWithLag",
                 "directconnect:AssociateHostedConnection",
+                "directconnect:AssociateMacSecKey",
                 "directconnect:AssociateVirtualInterface",
                 "directconnect:ConfirmConnection",
                 "directconnect:ConfirmPrivateVirtualInterface",
@@ -2786,11 +2817,13 @@
                 "directconnect:DescribeVirtualGateways",
                 "directconnect:DescribeVirtualInterfaces",
                 "directconnect:DisassociateConnectionFromLag",
+                "directconnect:DisassociateMacSecKey",
                 "directconnect:ListVirtualInterfaceTestHistory",
                 "directconnect:StartBgpFailoverTest",
                 "directconnect:StopBgpFailoverTest",
                 "directconnect:TagResource",
                 "directconnect:UntagResource",
+                "directconnect:UpdateConnection",
                 "directconnect:UpdateDirectConnectGatewayAssociation",
                 "directconnect:UpdateLag",
                 "directconnect:UpdateVirtualInterfaceAttributes",
@@ -3032,10 +3065,12 @@
                 "ec2:AssociateDhcpOptions",
                 "ec2:AssociateEnclaveCertificateIamRole",
                 "ec2:AssociateIamInstanceProfile",
+                "ec2:AssociateInstanceEventWindow",
                 "ec2:AssociateRouteTable",
                 "ec2:AssociateSubnetCidrBlock",
                 "ec2:AssociateTransitGatewayMulticastDomain",
                 "ec2:AssociateTransitGatewayRouteTable",
+                "ec2:AssociateTrunkInterface",
                 "ec2:AssociateVpcCidrBlock",
                 "ec2:AttachClassicLinkVpc",
                 "ec2:AttachInternetGateway",
@@ -3071,6 +3106,7 @@
                 "ec2:CreateFlowLogs",
                 "ec2:CreateFpgaImage",
                 "ec2:CreateImage",
+                "ec2:CreateInstanceEventWindow",
                 "ec2:CreateInstanceExportTask",
                 "ec2:CreateInternetGateway",
                 "ec2:CreateKeyPair",
@@ -3097,6 +3133,7 @@
                 "ec2:CreateSpotDatafeedSubscription",
                 "ec2:CreateStoreImageTask",
                 "ec2:CreateSubnet",
+                "ec2:CreateSubnetCidrReservation",
                 "ec2:CreateTags",
                 "ec2:CreateTrafficMirrorFilter",
                 "ec2:CreateTrafficMirrorFilterRule",
@@ -3129,6 +3166,7 @@
                 "ec2:DeleteFleets",
                 "ec2:DeleteFlowLogs",
                 "ec2:DeleteFpgaImage",
+                "ec2:DeleteInstanceEventWindow",
                 "ec2:DeleteInternetGateway",
                 "ec2:DeleteKeyPair",
                 "ec2:DeleteLaunchTemplate",
@@ -3151,6 +3189,7 @@
                 "ec2:DeleteSnapshot",
                 "ec2:DeleteSpotDatafeedSubscription",
                 "ec2:DeleteSubnet",
+                "ec2:DeleteSubnetCidrReservation",
                 "ec2:DeleteTags",
                 "ec2:DeleteTrafficMirrorFilter",
                 "ec2:DeleteTrafficMirrorFilterRule",
@@ -3222,6 +3261,7 @@
                 "ec2:DescribeInstanceAttribute",
                 "ec2:DescribeInstanceCreditSpecifications",
                 "ec2:DescribeInstanceEventNotificationAttributes",
+                "ec2:DescribeInstanceEventWindows",
                 "ec2:DescribeInstanceStatus",
                 "ec2:DescribeInstanceTypeOfferings",
                 "ec2:DescribeInstanceTypes",
@@ -3285,6 +3325,7 @@
                 "ec2:DescribeTransitGatewayRouteTables",
                 "ec2:DescribeTransitGatewayVpcAttachments",
                 "ec2:DescribeTransitGateways",
+                "ec2:DescribeTrunkInterfaceAssociations",
                 "ec2:DescribeVolumeAttribute",
                 "ec2:DescribeVolumeStatus",
                 "ec2:DescribeVolumes",
@@ -3319,10 +3360,12 @@
                 "ec2:DisassociateClientVpnTargetNetwork",
                 "ec2:DisassociateEnclaveCertificateIamRole",
                 "ec2:DisassociateIamInstanceProfile",
+                "ec2:DisassociateInstanceEventWindow",
                 "ec2:DisassociateRouteTable",
                 "ec2:DisassociateSubnetCidrBlock",
                 "ec2:DisassociateTransitGatewayMulticastDomain",
                 "ec2:DisassociateTransitGatewayRouteTable",
+                "ec2:DisassociateTrunkInterface",
                 "ec2:DisassociateVpcCidrBlock",
                 "ec2:EnableEbsEncryptionByDefault",
                 "ec2:EnableFastSnapshotRestores",
@@ -3355,6 +3398,7 @@
                 "ec2:GetPasswordData",
                 "ec2:GetReservedInstancesExchangeQuote",
                 "ec2:GetSerialConsoleAccessStatus",
+                "ec2:GetSubnetCidrReservations",
                 "ec2:GetTransitGatewayAttachmentPropagations",
                 "ec2:GetTransitGatewayMulticastDomainAssociations",
                 "ec2:GetTransitGatewayPrefixListReferences",
@@ -3382,6 +3426,7 @@
                 "ec2:ModifyInstanceCapacityReservationAttributes",
                 "ec2:ModifyInstanceCreditSpecification",
                 "ec2:ModifyInstanceEventStartTime",
+                "ec2:ModifyInstanceEventWindow",
                 "ec2:ModifyInstanceMetadataOptions",
                 "ec2:ModifyInstancePlacement",
                 "ec2:ModifyLaunchTemplate",
@@ -4241,13 +4286,20 @@
                 "fsx:CreateDataRepositoryTask",
                 "fsx:CreateFileSystem",
                 "fsx:CreateFileSystemFromBackup",
+                "fsx:CreateStorageVirtualMachine",
+                "fsx:CreateVolume",
+                "fsx:CreateVolumeFromBackup",
                 "fsx:DeleteBackup",
                 "fsx:DeleteFileSystem",
+                "fsx:DeleteStorageVirtualMachine",
+                "fsx:DeleteVolume",
                 "fsx:DescribeAssociatedFileGateways",
                 "fsx:DescribeBackups",
                 "fsx:DescribeDataRepositoryTasks",
                 "fsx:DescribeFileSystemAliases",
                 "fsx:DescribeFileSystems",
+                "fsx:DescribeStorageVirtualMachines",
+                "fsx:DescribeVolumes",
                 "fsx:DisassociateFileGateway",
                 "fsx:DisassociateFileSystemAliases",
                 "fsx:ListTagsForResource",
@@ -4255,6 +4307,8 @@
                 "fsx:TagResource",
                 "fsx:UntagResource",
                 "fsx:UpdateFileSystem",
+                "fsx:UpdateStorageVirtualMachine",
+                "fsx:UpdateVolume",
                 "gamelift:AcceptMatch",
                 "gamelift:ClaimGameServer",
                 "gamelift:CreateAlias",
@@ -4584,6 +4638,7 @@
                 "glue:ListSchemas",
                 "glue:ListTriggers",
                 "glue:ListWorkflows",
+                "glue:NotifyEvent",
                 "glue:PutDataCatalogEncryptionSettings",
                 "glue:PutResourcePolicy",
                 "glue:PutSchemaVersionMetadata",
@@ -4629,11 +4684,13 @@
                 "grafana:CreateWorkspace",
                 "grafana:DeleteWorkspace",
                 "grafana:DescribeWorkspace",
+                "grafana:DescribeWorkspaceAuthentication",
                 "grafana:DisassociateLicense",
                 "grafana:ListPermissions",
                 "grafana:ListWorkspaces",
                 "grafana:UpdatePermissions",
                 "grafana:UpdateWorkspace",
+                "grafana:UpdateWorkspaceAuthentication",
                 "greengrass:AssociateRoleToGroup",
                 "greengrass:AssociateServiceRoleToAccount",
                 "greengrass:CancelDeployment",
@@ -5490,8 +5547,10 @@
                 "iotevents:DescribeAlarmModel",
                 "iotevents:DescribeDetector",
                 "iotevents:DescribeDetectorModel",
+                "iotevents:DescribeDetectorModelAnalysis",
                 "iotevents:DescribeInput",
                 "iotevents:DescribeLoggingOptions",
+                "iotevents:GetDetectorModelAnalysisResults",
                 "iotevents:ListAlarmModelVersions",
                 "iotevents:ListAlarmModels",
                 "iotevents:ListAlarms",
@@ -5502,6 +5561,7 @@
                 "iotevents:ListInputs",
                 "iotevents:ListTagsForResource",
                 "iotevents:PutLoggingOptions",
+                "iotevents:StartDetectorModelAnalysis",
                 "iotevents:TagResource",
                 "iotevents:UntagResource",
                 "iotevents:UpdateAlarmModel",
@@ -5754,11 +5814,13 @@
                 "kendra:DeleteDataSource",
                 "kendra:DeleteFaq",
                 "kendra:DeleteIndex",
+                "kendra:DeletePrincipalMapping",
                 "kendra:DeleteQuerySuggestionsBlockList",
                 "kendra:DeleteThesaurus",
                 "kendra:DescribeDataSource",
                 "kendra:DescribeFaq",
                 "kendra:DescribeIndex",
+                "kendra:DescribePrincipalMapping",
                 "kendra:DescribeQuerySuggestionsBlockList",
                 "kendra:DescribeQuerySuggestionsConfig",
                 "kendra:DescribeThesaurus",
@@ -5766,10 +5828,12 @@
                 "kendra:ListDataSourceSyncJobs",
                 "kendra:ListDataSources",
                 "kendra:ListFaqs",
+                "kendra:ListGroupsOlderThanOrderingId",
                 "kendra:ListIndices",
                 "kendra:ListQuerySuggestionsBlockLists",
                 "kendra:ListTagsForResource",
                 "kendra:ListThesauri",
+                "kendra:PutPrincipalMapping",
                 "kendra:Query",
                 "kendra:StartDataSourceSyncJob",
                 "kendra:StopDataSourceSyncJob",
@@ -5827,16 +5891,20 @@
                 "kinesisanalytics:DeleteApplicationVpcConfiguration",
                 "kinesisanalytics:DescribeApplication",
                 "kinesisanalytics:DescribeApplicationSnapshot",
+                "kinesisanalytics:DescribeApplicationVersion",
                 "kinesisanalytics:DiscoverInputSchema",
                 "kinesisanalytics:GetApplicationState",
                 "kinesisanalytics:ListApplicationSnapshots",
+                "kinesisanalytics:ListApplicationVersions",
                 "kinesisanalytics:ListApplications",
                 "kinesisanalytics:ListTagsForResource",
+                "kinesisanalytics:RollbackApplication",
                 "kinesisanalytics:StartApplication",
                 "kinesisanalytics:StopApplication",
                 "kinesisanalytics:TagResource",
                 "kinesisanalytics:UntagResource",
                 "kinesisanalytics:UpdateApplication",
+                "kinesisanalytics:UpdateApplicationMaintenanceConfiguration",
                 "kinesisvideo:ConnectAsMaster",
                 "kinesisvideo:ConnectAsViewer",
                 "kinesisvideo:CreateSignalingChannel",
@@ -6055,6 +6123,8 @@
                 "lex:GetIntent",
                 "lex:GetIntentVersions",
                 "lex:GetIntents",
+                "lex:GetMigration",
+                "lex:GetMigrations",
                 "lex:GetSession",
                 "lex:GetSlotType",
                 "lex:GetSlotTypeVersions",
@@ -6084,6 +6154,7 @@
                 "lex:RecognizeUtterance",
                 "lex:StartConversation",
                 "lex:StartImport",
+                "lex:StartMigration",
                 "lex:TagResource",
                 "lex:UntagResource",
                 "lex:UpdateBot",
@@ -6939,6 +7010,7 @@
                 "mobiletargeting:GetPushTemplate",
                 "mobiletargeting:GetRecommenderConfiguration",
                 "mobiletargeting:GetRecommenderConfigurations",
+                "mobiletargeting:GetReports",
                 "mobiletargeting:GetSegment",
                 "mobiletargeting:GetSegmentExportJobs",
                 "mobiletargeting:GetSegmentImportJobs",
@@ -7330,6 +7402,7 @@
                 "personalize:CreateBatchInferenceJob",
                 "personalize:CreateCampaign",
                 "personalize:CreateDataset",
+                "personalize:CreateDatasetExportJob",
                 "personalize:CreateDatasetGroup",
                 "personalize:CreateDatasetImportJob",
                 "personalize:CreateEventTracker",
@@ -7348,6 +7421,7 @@
                 "personalize:DescribeBatchInferenceJob",
                 "personalize:DescribeCampaign",
                 "personalize:DescribeDataset",
+                "personalize:DescribeDatasetExportJob",
                 "personalize:DescribeDatasetGroup",
                 "personalize:DescribeDatasetImportJob",
                 "personalize:DescribeEventTracker",
@@ -7362,6 +7436,7 @@
                 "personalize:GetSolutionMetrics",
                 "personalize:ListBatchInferenceJobs",
                 "personalize:ListCampaigns",
+                "personalize:ListDatasetExportJobs",
                 "personalize:ListDatasetGroups",
                 "personalize:ListDatasetImportJobs",
                 "personalize:ListDatasets",
@@ -7401,6 +7476,7 @@
                 "profile:DeleteProfileObjectType",
                 "profile:GetDomain",
                 "profile:GetIntegration",
+                "profile:GetMatches",
                 "profile:GetProfileObjectType",
                 "profile:GetProfileObjectTypeTemplate",
                 "profile:ListAccountIntegrations",
@@ -7410,6 +7486,7 @@
                 "profile:ListProfileObjectTypes",
                 "profile:ListProfileObjects",
                 "profile:ListTagsForResource",
+                "profile:MergeProfiles",
                 "profile:PutIntegration",
                 "profile:PutProfileObject",
                 "profile:PutProfileObjectType",
@@ -7765,6 +7842,7 @@
                 "rds:DescribeReservedDBInstancesOfferings",
                 "rds:DescribeSourceRegions",
                 "rds:DescribeValidDBInstanceModifications",
+                "rds:DownloadCompleteDBLogFile",
                 "rds:DownloadDBLogFilePortion",
                 "rds:FailoverDBCluster",
                 "rds:FailoverGlobalCluster",
@@ -8346,6 +8424,7 @@
                 "s3:CreateAccessPointForObjectLambda",
                 "s3:CreateBucket",
                 "s3:CreateJob",
+                "s3:CreateMultiRegionAccessPoint",
                 "s3:DeleteAccessPoint",
                 "s3:DeleteAccessPointForObjectLambda",
                 "s3:DeleteAccessPointPolicy",
@@ -8355,6 +8434,7 @@
                 "s3:DeleteBucketPolicy",
                 "s3:DeleteBucketWebsite",
                 "s3:DeleteJobTagging",
+                "s3:DeleteMultiRegionAccessPoint",
                 "s3:DeleteObject",
                 "s3:DeleteObjectTagging",
                 "s3:DeleteObjectVersion",
@@ -8362,6 +8442,7 @@
                 "s3:DeleteStorageLensConfiguration",
                 "s3:DeleteStorageLensConfigurationTagging",
                 "s3:DescribeJob",
+                "s3:DescribeMultiRegionAccessPointOperation",
                 "s3:GetAccelerateConfiguration",
                 "s3:GetAccessPoint",
                 "s3:GetAccessPointConfigurationForObjectLambda",
@@ -8392,6 +8473,9 @@
                 "s3:GetJobTagging",
                 "s3:GetLifecycleConfiguration",
                 "s3:GetMetricsConfiguration",
+                "s3:GetMultiRegionAccessPoint",
+                "s3:GetMultiRegionAccessPointPolicy",
+                "s3:GetMultiRegionAccessPointPolicyStatus",
                 "s3:GetObject",
                 "s3:GetObjectAcl",
                 "s3:GetObjectLegalHold",
@@ -8414,6 +8498,7 @@
                 "s3:ListBucketMultipartUploads",
                 "s3:ListBucketVersions",
                 "s3:ListJobs",
+                "s3:ListMultiRegionAccessPoints",
                 "s3:ListMultipartUploadParts",
                 "s3:ListStorageLensConfigurations",
                 "s3:ObjectOwnerOverrideToBucketOwner",
@@ -8441,6 +8526,7 @@
                 "s3:PutJobTagging",
                 "s3:PutLifecycleConfiguration",
                 "s3:PutMetricsConfiguration",
+                "s3:PutMultiRegionAccessPointPolicy",
                 "s3:PutObject",
                 "s3:PutObjectAcl",
                 "s3:PutObjectLegalHold",
@@ -8604,6 +8690,7 @@
                 "sagemaker:GetSagemakerServicecatalogPortfolioStatus",
                 "sagemaker:GetSearchSuggestions",
                 "sagemaker:InvokeEndpoint",
+                "sagemaker:InvokeEndpointAsync",
                 "sagemaker:ListActions",
                 "sagemaker:ListAlgorithms",
                 "sagemaker:ListAppImageConfigs",
@@ -8982,7 +9069,10 @@
                 "servicediscovery:RegisterInstance",
                 "servicediscovery:TagResource",
                 "servicediscovery:UntagResource",
+                "servicediscovery:UpdateHttpNamespace",
                 "servicediscovery:UpdateInstanceCustomHealthStatus",
+                "servicediscovery:UpdatePrivateDnsNamespace",
+                "servicediscovery:UpdatePublicDnsNamespace",
                 "servicediscovery:UpdateService",
                 "servicequotas:AssociateServiceQuotaTemplate",
                 "servicequotas:DeleteServiceQuotaIncreaseRequestFromTemplate",
@@ -10556,7 +10646,9 @@
                 "arn:${Partition}:robomaker:${Region}:${AccountId}:${ResourceType}/${ResourceName}",
                 "arn:${Partition}:route53-recovery-control::${AccountId}:${ResourceType}/${ResourceName}",
                 "arn:${Partition}:route53-recovery-readiness::${Account}:${ResourceType}/${ResourceName}",
+                "arn:${Partition}:route53resolver:${Region}:${Account}:${ResourceType}/${ResourceId}",
                 "arn:${Partition}:s3-outposts:${Region}:${Account}:${ResourceType}/${ResourcePath}",
+                "arn:${Partition}:sagemaker:${Region}:${AccountId}:${ResourceType}/${ResourceName}",
                 "arn:${Partition}:secretsmanager:${Region}:${Account}:secret:${SecretId}",
                 "arn:${Partition}:securityhub:<region>:<account_ID>:.+",
                 "arn:${Partition}:ses:${Region}:${Account}:${resourceType}/${resourceId}",
@@ -10596,7 +10688,7 @@
                 "arn:aws:budgets::<account_ID>:budget/<budgetname>",
                 "arn:aws:bugbust:<region>:<account-id>:<resource-type>/<resource_name>",
                 "arn:aws:chime::<accountId>:<resourceType>/<resourceId>",
-                "arn:aws:cloud9:<region>:<account-id>:<resource_type>:<resource_id>",
+                "arn:aws:cloud9:${Region}:${Account}:${ResourceType}:${ResourceId}",
                 "arn:aws:clouddirectory:<region>:<accountId>:<relative-id>",
                 "arn:aws:cloudformation:<region>:<account>:<relative-id>",
                 "arn:aws:cloudsearch:<region>:<account>:<resourceType>/<resourceName>",
@@ -10647,7 +10739,7 @@
                 "arn:aws:glacier:<region>:<accountID>:<relative-id>",
                 "arn:aws:globalaccelerator::<account>:accelerator/<AcceleratorId>",
                 "arn:aws:glue:<region>:<accountID>:<resourceType>/<resourcePath>",
-                "arn:aws:grafana:<region>:<account-id>:/<resource-type>/<resource-id>",
+                "arn:aws:grafana:${Region}:${Account}:/${ResourceType}/${ResourceId}",
                 "arn:aws:groundstation:<region>:<accountID>:<resourceType>/<resourceId>",
                 "arn:aws:guardduty:<region>:<account_ID>:.+",
                 "arn:aws:health::<namespace>:<relative-id>",
@@ -10668,7 +10760,7 @@
                 "arn:aws:kms:<region>:<account_id>:<resource_type>/<id>",
                 "arn:aws:lambda:<region>:<account>:<resourceType>:<resourceId>",
                 "arn:aws:lex:${Region}:${Account}:${ResourceType}/${ResourceId}",
-                "arn:aws:lex:<region>:<account_ID>:<type>:<name>",
+                "arn:aws:lex:${Region}:${Account}:${Type}:${Name}",
                 "arn:aws:license-manager:${Region}:${Account}:${ResourceType}:${ResourceId}",
                 "arn:aws:lightsail:<regionName>:<userAccountId>:<resourceType>/<Id>",
                 "arn:aws:logs:.+:.+:.+",
@@ -10685,7 +10777,7 @@
                 "arn:aws:mgh:<region>:<namespace>:<relative-id>",
                 "arn:aws:mgn:<region>:<account-id>:<resource-type>/<resource_name>",
                 "arn:aws:mobilehub:<region>:<aws_account_ID>:project/<project_ID>",
-                "arn:aws:mobiletargeting:<region>:<account_ID>:.+",
+                "arn:aws:mobiletargeting:${Region}:${Account}:.+",
                 "arn:aws:monitron:<region>:<account-id>:<resource-type>/<resource_name>",
                 "arn:aws:neptune-db:<region>:<accountID>:<relative-id>",
                 "arn:aws:network-firewall:<region>:<account-id>:<resource-type>/<resource_name>",
@@ -10697,16 +10789,15 @@
                 "arn:aws:profile:<region>:<account-id>:<resource-type>/<resource_name>",
                 "arn:aws:proton:<region>:<account-id>:<resource-type>/<resource_name>",
                 "arn:aws:quicksight:<region>:<accountId>:<resourceType>/<resourceId>",
-                "arn:aws:ram:<region>:<account-id>:resource-share/<resource-uuid>",
+                "arn:aws:ram:${Region}:${AccountId}:resource-share/${Resource-UUID}",
                 "arn:aws:rds-db:<region>:<account-id>:dbuser:<dbi-resource-id>/<db-user-name>",
+                "arn:aws:rds:${Region}:${Account}:${RelativeId}",
                 "arn:aws:rds:<region>:<accountID>:<relative-id>",
                 "arn:aws:redshift:<region>:<accountID>:<relative-id>",
                 "arn:aws:rekognition:<region>:<accountID>:<relative-id>",
                 "arn:aws:route53:::<resource>/<id>",
-                "arn:aws:route53resolver:<region>:<account-id>:<resource-type>/<resource-id>",
                 "arn:aws:s3-object-lambda:::accesspoint/<access point name>",
-                "arn:aws:s3:::<bucket_name>/<key_name>",
-                "arn:aws:sagemaker:<region>:<account-id>:<resource-type>/<resource_name>",
+                "arn:aws:s3:::${BucketName}/${KeyName}",
                 "arn:aws:savingsplans::${Account}:${ResourceType}/${ResourcePath}",
                 "arn:aws:schemas:<region>:<account>:<resourceType>/<resourceName>",
                 "arn:aws:sdb:<region>:<account_ID>:domain/<domain_name>",
@@ -10733,1777 +10824,1804 @@
                 "arn:aws:workspaces:*:*"
             ],
             "Condition": {
-                "SomeCondition-BRbgl": {
+                "SomeCondition-geSqv": {
                     " swf:workflowType.name": "...some value..."
                 },
-                "SomeCondition-xpnkR": {
+                "SomeCondition-MFZmW": {
                     "a4b:amazonId": "...some value..."
                 },
-                "SomeCondition-hqdwX": {
+                "SomeCondition-cfNLp": {
                     "a4b:filters_deviceType": "...some value..."
                 },
-                "SomeCondition-gSnGA": {
+                "SomeCondition-yALFs": {
                     "account:TargetRegion": "...some value..."
                 },
-                "SomeCondition-dwJLO": {
+                "SomeCondition-xWmfA": {
                     "accounts.google.com:aud": "...some value..."
                 },
-                "SomeCondition-RyKGW": {
+                "SomeCondition-sCWLd": {
                     "accounts.google.com:oaud": "...some value..."
                 },
-                "SomeCondition-SJBke": {
+                "SomeCondition-lhVGH": {
                     "accounts.google.com:sub": "...some value..."
                 },
-                "SomeCondition-cbyoB": {
+                "SomeCondition-yDxUC": {
                     "acm-pca:TemplateArn": "...some value..."
                 },
-                "SomeCondition-FgKkc": {
+                "SomeCondition-LIhgr": {
                     "apigateway:Request/AccessLoggingDestination": "...some value..."
                 },
-                "SomeCondition-YkoFb": {
+                "SomeCondition-HWahe": {
                     "apigateway:Request/AccessLoggingFormat": "...some value..."
                 },
-                "SomeCondition-dponx": {
+                "SomeCondition-rjBYX": {
                     "apigateway:Request/ApiKeyRequired": "...some value..."
                 },
-                "SomeCondition-lGRxL": {
+                "SomeCondition-EsZWt": {
                     "apigateway:Request/ApiName": "...some value..."
                 },
-                "SomeCondition-ZaNAn": {
+                "SomeCondition-PVvjJ": {
                     "apigateway:Request/AuthorizerType": "...some value..."
                 },
-                "SomeCondition-SanHv": {
+                "SomeCondition-cdbTG": {
                     "apigateway:Request/AuthorizerUri": "...some value..."
                 },
-                "SomeCondition-JUIPA": {
+                "SomeCondition-GDRth": {
                     "apigateway:Request/DisableExecuteApiEndpoint": "...some value..."
                 },
-                "SomeCondition-cCyON": {
+                "SomeCondition-VMPpI": {
                     "apigateway:Request/EndpointType": "...some value..."
                 },
-                "SomeCondition-hNUmF": {
+                "SomeCondition-kEFIr": {
                     "apigateway:Request/MtlsTrustStoreUri": "...some value..."
                 },
-                "SomeCondition-ZfLUX": {
+                "SomeCondition-oJGnv": {
                     "apigateway:Request/MtlsTrustStoreVersion": "...some value..."
                 },
-                "SomeCondition-IbcLj": {
+                "SomeCondition-DKTcU": {
                     "apigateway:Request/RouteAuthorizationType": "...some value..."
                 },
-                "SomeCondition-wUMVE": {
+                "SomeCondition-CNnbH": {
                     "apigateway:Request/SecurityPolicy": "...some value..."
                 },
-                "SomeCondition-znPiZ": {
+                "SomeCondition-kCViq": {
                     "apigateway:Request/StageName": "...some value..."
                 },
-                "SomeCondition-LurGa": {
+                "SomeCondition-jEFRi": {
                     "apigateway:Resource/AccessLoggingDestination": "...some value..."
                 },
-                "SomeCondition-Kgdco": {
+                "SomeCondition-IUkyD": {
                     "apigateway:Resource/AccessLoggingFormat": "...some value..."
                 },
-                "SomeCondition-PHuVA": {
+                "SomeCondition-SRGqb": {
                     "apigateway:Resource/ApiKeyRequired": "...some value..."
                 },
-                "SomeCondition-dMnjo": {
+                "SomeCondition-WKFDr": {
                     "apigateway:Resource/ApiName": "...some value..."
                 },
-                "SomeCondition-sjLeS": {
+                "SomeCondition-pEGIy": {
                     "apigateway:Resource/AuthorizerType": "...some value..."
                 },
-                "SomeCondition-gtuCK": {
+                "SomeCondition-pDLQh": {
                     "apigateway:Resource/AuthorizerUri": "...some value..."
                 },
-                "SomeCondition-mIbiY": {
+                "SomeCondition-NrRFk": {
                     "apigateway:Resource/DisableExecuteApiEndpoint": "...some value..."
                 },
-                "SomeCondition-sYlJz": {
+                "SomeCondition-LqRKm": {
                     "apigateway:Resource/EndpointType": "...some value..."
                 },
-                "SomeCondition-DJaId": {
+                "SomeCondition-oNxMm": {
                     "apigateway:Resource/MtlsTrustStoreUri": "...some value..."
                 },
-                "SomeCondition-eUQXt": {
+                "SomeCondition-PSYxI": {
                     "apigateway:Resource/MtlsTrustStoreVersion": "...some value..."
                 },
-                "SomeCondition-LHTUw": {
+                "SomeCondition-SZvtG": {
                     "apigateway:Resource/RouteAuthorizationType": "...some value..."
                 },
-                "SomeCondition-UPwQt": {
+                "SomeCondition-JBPCk": {
                     "apigateway:Resource/SecurityPolicy": "...some value..."
                 },
-                "SomeCondition-dknKA": {
+                "SomeCondition-EpuUk": {
                     "apprunner:AutoScalingConfigurationArn": "...some value..."
                 },
-                "SomeCondition-ULzOs": {
+                "SomeCondition-EewkN": {
                     "apprunner:ConnectionArn": "...some value..."
                 },
-                "SomeCondition-FUxdW": {
+                "SomeCondition-jhLdr": {
                     "appstream:userId": "...some value..."
                 },
-                "SomeCondition-bRpOl": {
+                "SomeCondition-IFOwS": {
                     "autoscaling:ImageId": "...some value..."
                 },
-                "SomeCondition-DuvVZ": {
+                "SomeCondition-HLyol": {
                     "autoscaling:InstanceType": "...some value..."
                 },
-                "SomeCondition-DIALS": {
+                "SomeCondition-gaXWQ": {
                     "autoscaling:InstanceTypes": "...some value..."
                 },
-                "SomeCondition-BKfyc": {
+                "SomeCondition-QNaWD": {
                     "autoscaling:LaunchConfigurationName": "...some value..."
                 },
-                "SomeCondition-GbiFu": {
+                "SomeCondition-TxBCl": {
                     "autoscaling:LaunchTemplateVersionSpecified": "...some value..."
                 },
-                "SomeCondition-LpSam": {
+                "SomeCondition-JWEtg": {
                     "autoscaling:LoadBalancerNames": "...some value..."
                 },
-                "SomeCondition-POVve": {
+                "SomeCondition-sdWFo": {
                     "autoscaling:MaxSize": "...some value..."
                 },
-                "SomeCondition-JaPjE": {
+                "SomeCondition-DFUsQ": {
                     "autoscaling:MetadataHttpEndpoint": "...some value..."
                 },
-                "SomeCondition-LNBEP": {
+                "SomeCondition-KGNSg": {
                     "autoscaling:MetadataHttpPutResponseHopLimit": "...some value..."
                 },
-                "SomeCondition-WnNUS": {
+                "SomeCondition-IvaKj": {
                     "autoscaling:MetadataHttpTokens": "...some value..."
                 },
-                "SomeCondition-EGWtk": {
+                "SomeCondition-mnFRz": {
                     "autoscaling:MinSize": "...some value..."
                 },
-                "SomeCondition-LBdNJ": {
+                "SomeCondition-vUBLX": {
                     "autoscaling:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-wKHdo": {
+                "SomeCondition-qNjHO": {
                     "autoscaling:SpotPrice": "...some value..."
                 },
-                "SomeCondition-HOobt": {
+                "SomeCondition-oAQui": {
                     "autoscaling:TargetGroupARNs": "...some value..."
                 },
-                "SomeCondition-sjeyd": {
+                "SomeCondition-UJhap": {
                     "autoscaling:VPCZoneIdentifiers": "...some value..."
                 },
-                "SomeCondition-ACYje": {
+                "SomeCondition-ybVHK": {
                     "aws-marketplace:AgreementType": "...some value..."
                 },
-                "SomeCondition-TgxNV": {
+                "SomeCondition-ktjsg": {
                     "aws-marketplace:PartyType": "...some value..."
                 },
-                "SomeCondition-RmUkJ": {
+                "SomeCondition-kRyqS": {
                     "aws:CalledVia": "...some value..."
                 },
-                "SomeCondition-AORJr": {
+                "SomeCondition-XTlOA": {
                     "aws:CurrentTime": "...some value..."
                 },
-                "SomeCondition-auBAj": {
+                "SomeCondition-BgmFy": {
                     "aws:EpochTime": "...some value..."
                 },
-                "SomeCondition-LUxih": {
+                "SomeCondition-bCDpL": {
                     "aws:FederatedProvider": "...some value..."
                 },
-                "SomeCondition-JjuHN": {
+                "SomeCondition-nOPaF": {
                     "aws:MultiFactorAuthAge": "...some value..."
                 },
-                "SomeCondition-HUIan": {
+                "SomeCondition-pdBan": {
                     "aws:MultiFactorAuthPresent": "...some value..."
                 },
-                "SomeCondition-vkJRu": {
+                "SomeCondition-dPEjO": {
                     "aws:PrincipalTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-aofqA": {
+                "SomeCondition-vcUGp": {
                     "aws:RequestTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-lCQSm": {
+                "SomeCondition-BVKYz": {
                     "aws:RequestTag/tag-key": "...some value..."
                 },
-                "SomeCondition-zQwVR": {
+                "SomeCondition-DCbPM": {
+                    "aws:RequestedRegion": "...some value..."
+                },
+                "SomeCondition-DSFcd": {
                     "aws:ResourceTag/": "...some value..."
                 },
-                "SomeCondition-MfDRw": {
+                "SomeCondition-Llpni": {
                     "aws:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-cgOXQ": {
+                "SomeCondition-cKJkj": {
                     "aws:SecureTransport": "...some value..."
                 },
-                "SomeCondition-usbPm": {
+                "SomeCondition-KTwBV": {
                     "aws:SourceAccount": "...some value..."
                 },
-                "SomeCondition-AmQlP": {
+                "SomeCondition-VWzdF": {
                     "aws:SourceArn": "...some value..."
                 },
-                "SomeCondition-lrQjV": {
+                "SomeCondition-WwxhF": {
                     "aws:SourceIdentity": "...some value..."
                 },
-                "SomeCondition-gOYAp": {
+                "SomeCondition-opMsI": {
                     "aws:SourceIp": "...some value..."
                 },
-                "SomeCondition-SrcuE": {
+                "SomeCondition-nVgGA": {
                     "aws:SourceVpc": "...some value..."
                 },
-                "SomeCondition-MiUrk": {
+                "SomeCondition-WBjEG": {
                     "aws:SourceVpce": "...some value..."
                 },
-                "SomeCondition-LKQCf": {
+                "SomeCondition-FwEtB": {
                     "aws:TagKeys": "...some value..."
                 },
-                "SomeCondition-bqXiM": {
+                "SomeCondition-ULynx": {
                     "aws:UserAgent": "...some value..."
                 },
-                "SomeCondition-FiclX": {
+                "SomeCondition-pHjxS": {
                     "backup:CopyTargetOrgPaths": "...some value..."
                 },
-                "SomeCondition-eplkI": {
+                "SomeCondition-ZycmU": {
                     "backup:CopyTargets": "...some value..."
                 },
-                "SomeCondition-RBtra": {
+                "SomeCondition-WQXlj": {
                     "batch:AWSLogsCreateGroup": "...some value..."
                 },
-                "SomeCondition-uyoMT": {
+                "SomeCondition-IAmwp": {
                     "batch:AWSLogsGroup": "...some value..."
                 },
-                "SomeCondition-hiLwN": {
+                "SomeCondition-aevoU": {
                     "batch:AWSLogsRegion": "...some value..."
                 },
-                "SomeCondition-NBauO": {
+                "SomeCondition-xAbNp": {
                     "batch:AWSLogsStreamPrefix": "...some value..."
                 },
-                "SomeCondition-LuNtb": {
+                "SomeCondition-YiDjw": {
                     "batch:Image": "...some value..."
                 },
-                "SomeCondition-FzJRD": {
+                "SomeCondition-uDhJE": {
                     "batch:LogDriver": "...some value..."
                 },
-                "SomeCondition-kAqxV": {
+                "SomeCondition-nQMEU": {
                     "batch:Privileged": "...some value..."
                 },
-                "SomeCondition-kwdJv": {
+                "SomeCondition-PofpO": {
                     "batch:User": "...some value..."
                 },
-                "SomeCondition-zePun": {
+                "SomeCondition-GBsyk": {
                     "catalog:ChangeType": "...some value..."
                 },
-                "SomeCondition-bGyLo": {
+                "SomeCondition-fXNdg": {
                     "cloud9:EnvironmentId": "...some value..."
                 },
-                "SomeCondition-tIZpy": {
+                "SomeCondition-tqPxB": {
                     "cloud9:EnvironmentName": "...some value..."
                 },
-                "SomeCondition-ApKgZ": {
+                "SomeCondition-VBLZg": {
                     "cloud9:InstanceType": "...some value..."
                 },
-                "SomeCondition-VvnbG": {
+                "SomeCondition-lFJes": {
                     "cloud9:Permissions": "...some value..."
                 },
-                "SomeCondition-hAvcg": {
+                "SomeCondition-SnFZw": {
                     "cloud9:SubnetId": "...some value..."
                 },
-                "SomeCondition-xwrOH": {
+                "SomeCondition-LOeiT": {
                     "cloud9:UserArn": "...some value..."
                 },
-                "SomeCondition-Nbqlp": {
+                "SomeCondition-laGfL": {
                     "cloudformation:ChangeSetName": "...some value..."
                 },
-                "SomeCondition-PfSFG": {
+                "SomeCondition-lfcnL": {
                     "cloudformation:ImportResourceTypes": "...some value..."
                 },
-                "SomeCondition-wgZjR": {
+                "SomeCondition-rfAgc": {
                     "cloudformation:ResourceTypes": "...some value..."
                 },
-                "SomeCondition-fIMKT": {
+                "SomeCondition-jGusB": {
                     "cloudformation:RoleArn": "...some value..."
                 },
-                "SomeCondition-WwRaG": {
+                "SomeCondition-EVatn": {
                     "cloudformation:StackPolicyUrl": "...some value..."
                 },
-                "SomeCondition-nyOtd": {
+                "SomeCondition-dIlxg": {
                     "cloudformation:TemplateUrl": "...some value..."
                 },
-                "SomeCondition-aJTqw": {
+                "SomeCondition-USWVN": {
                     "cloudwatch:AlarmActions": "...some value..."
                 },
-                "SomeCondition-tlYrq": {
+                "SomeCondition-AjhaI": {
                     "cloudwatch:namespace": "...some value..."
                 },
-                "SomeCondition-SsXtl": {
+                "SomeCondition-ytWmB": {
                     "codecommit:References": "...some value..."
                 },
-                "SomeCondition-bDRcp": {
+                "SomeCondition-YyPnM": {
                     "codestar-connections:BranchName": "...some value..."
                 },
-                "SomeCondition-joTmX": {
+                "SomeCondition-UPeli": {
                     "codestar-connections:FullRepositoryId": "...some value..."
                 },
-                "SomeCondition-IrMoV": {
+                "SomeCondition-IuETF": {
                     "codestar-connections:HostArn": "...some value..."
                 },
-                "SomeCondition-cERMr": {
+                "SomeCondition-IQvWS": {
                     "codestar-connections:InstallationId": "...some value..."
                 },
-                "SomeCondition-AGNKX": {
+                "SomeCondition-JSMBf": {
                     "codestar-connections:OwnerId": "...some value..."
                 },
-                "SomeCondition-yamjq": {
+                "SomeCondition-OocQG": {
                     "codestar-connections:PassedToService": "...some value..."
                 },
-                "SomeCondition-QfngR": {
+                "SomeCondition-iHYyK": {
                     "codestar-connections:ProviderAction": "...some value..."
                 },
-                "SomeCondition-scUWb": {
+                "SomeCondition-Qhcvm": {
                     "codestar-connections:ProviderPermissionsRequired": "...some value..."
                 },
-                "SomeCondition-YgsHZ": {
+                "SomeCondition-bPeKn": {
                     "codestar-connections:ProviderType": "...some value..."
                 },
-                "SomeCondition-rQOiL": {
+                "SomeCondition-lHcrn": {
                     "codestar-connections:ProviderTypeFilter": "...some value..."
                 },
-                "SomeCondition-mrLiW": {
+                "SomeCondition-tIXCa": {
                     "codestar-connections:RepositoryName": "...some value..."
                 },
-                "SomeCondition-lbTwM": {
+                "SomeCondition-Fsrvf": {
                     "codestar-notifications:NotificationsForResource": "...some value..."
                 },
-                "SomeCondition-CYTxj": {
+                "SomeCondition-CLIPe": {
                     "cognito-identity.amazonaws.com:amr": "...some value..."
                 },
-                "SomeCondition-qTIPO": {
+                "SomeCondition-kmOvi": {
                     "cognito-identity.amazonaws.com:aud": "...some value..."
                 },
-                "SomeCondition-bBrqd": {
+                "SomeCondition-IdaSF": {
                     "cognito-identity.amazonaws.com:sub": "...some value..."
                 },
-                "SomeCondition-puvYh": {
+                "SomeCondition-bQvZk": {
                     "comprehend:ModelKmsKey": "...some value..."
                 },
-                "SomeCondition-JIWYD": {
+                "SomeCondition-Mivjx": {
                     "comprehend:OutputKmsKey": "...some value..."
                 },
-                "SomeCondition-EdZLf": {
+                "SomeCondition-pDWVe": {
                     "comprehend:VolumeKmsKey": "...some value..."
                 },
-                "SomeCondition-FZjxu": {
+                "SomeCondition-aLtIB": {
                     "comprehend:VpcSecurityGroupIds": "...some value..."
                 },
-                "SomeCondition-OIbEm": {
+                "SomeCondition-XQudb": {
                     "comprehend:VpcSubnets": "...some value..."
                 },
-                "SomeCondition-EZLUQ": {
+                "SomeCondition-nGwHF": {
                     "connect:AttributeType": "...some value..."
                 },
-                "SomeCondition-toilQ": {
+                "SomeCondition-ovLHt": {
                     "connect:InstanceId": "...some value..."
                 },
-                "SomeCondition-Uiops": {
+                "SomeCondition-cdtMN": {
                     "connect:StorageResourceType": "...some value..."
                 },
-                "SomeCondition-gdIcr": {
+                "SomeCondition-UWMaA": {
                     "dataexchange:JobType": "...some value..."
                 },
-                "SomeCondition-BgbZS": {
+                "SomeCondition-uOhlE": {
                     "datapipeline:PipelineCreator": "...some value..."
                 },
-                "SomeCondition-QtUwf": {
+                "SomeCondition-lAnjS": {
                     "datapipeline:Tag": "...some value..."
                 },
-                "SomeCondition-DwHki": {
+                "SomeCondition-eudRM": {
                     "datapipeline:workerGroup": "...some value..."
                 },
-                "SomeCondition-KpJiR": {
+                "SomeCondition-soWNy": {
                     "dax:EnclosingOperation": "...some value..."
                 },
-                "SomeCondition-zNoSp": {
+                "SomeCondition-RASQT": {
                     "deepracer:MultiUser": "...some value..."
                 },
-                "SomeCondition-HYJXA": {
+                "SomeCondition-TkwOP": {
                     "deepracer:UserToken": "...some value..."
                 },
-                "SomeCondition-reHkG": {
+                "SomeCondition-cVGra": {
                     "dms:cert-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-GLXlF": {
+                "SomeCondition-wSdcy": {
                     "dms:endpoint-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-fKOiS": {
+                "SomeCondition-uJeWH": {
                     "dms:es-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-hIlSD": {
+                "SomeCondition-cUQZt": {
                     "dms:rep-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-QIfUe": {
+                "SomeCondition-bmkVu": {
                     "dms:req-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-NQdUg": {
+                "SomeCondition-rIhUu": {
                     "dms:subgrp-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-blhGF": {
+                "SomeCondition-rlvCt": {
                     "dms:task-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-IYKvU": {
+                "SomeCondition-xVWHD": {
                     "dynamodb:Attributes": "...some value..."
                 },
-                "SomeCondition-DBACZ": {
+                "SomeCondition-yKzXH": {
                     "dynamodb:EnclosingOperation": "...some value..."
                 },
-                "SomeCondition-DVRai": {
+                "SomeCondition-XcZwz": {
                     "dynamodb:FullTableScan": "...some value..."
                 },
-                "SomeCondition-uWDYq": {
+                "SomeCondition-yKNOe": {
                     "dynamodb:LeadingKeys": "...some value..."
                 },
-                "SomeCondition-MpDJO": {
+                "SomeCondition-StRTQ": {
                     "dynamodb:ReturnConsumedCapacity": "...some value..."
                 },
-                "SomeCondition-YwPMp": {
+                "SomeCondition-QWbXf": {
                     "dynamodb:ReturnValues": "...some value..."
                 },
-                "SomeCondition-eOrVA": {
+                "SomeCondition-Ptncz": {
                     "dynamodb:Select": "...some value..."
                 },
-                "SomeCondition-pAMJW": {
+                "SomeCondition-IgSGY": {
                     "ebs:Description": "...some value..."
                 },
-                "SomeCondition-bCGpv": {
+                "SomeCondition-fzayo": {
                     "ebs:ParentSnapshot": "...some value..."
                 },
-                "SomeCondition-uhjfy": {
+                "SomeCondition-vHngu": {
                     "ebs:VolumeSize": "...some value..."
                 },
-                "SomeCondition-dPbQl": {
+                "SomeCondition-xiWKF": {
                     "ec2:AccepterVpc": "...some value..."
                 },
-                "SomeCondition-mkPGj": {
+                "SomeCondition-ejomg": {
                     "ec2:AssociatePublicIpAddress": "...some value..."
                 },
-                "SomeCondition-KBEUh": {
+                "SomeCondition-KBCSQ": {
                     "ec2:Attribute/${AttributeName}": "...some value..."
                 },
-                "SomeCondition-rpWch": {
+                "SomeCondition-fJbzL": {
                     "ec2:AuthenticationType": "...some value..."
                 },
-                "SomeCondition-GMmor": {
+                "SomeCondition-oEzfA": {
                     "ec2:AuthorizedService": "...some value..."
                 },
-                "SomeCondition-uaKCt": {
+                "SomeCondition-PdhEb": {
                     "ec2:AuthorizedUser": "...some value..."
                 },
-                "SomeCondition-sZOAw": {
+                "SomeCondition-GhEMc": {
                     "ec2:AutoPlacement": "...some value..."
                 },
-                "SomeCondition-VHynD": {
+                "SomeCondition-hlARd": {
                     "ec2:AvailabilityZone": "...some value..."
                 },
-                "SomeCondition-MDnbR": {
+                "SomeCondition-KZiLC": {
                     "ec2:ClientRootCertificateChainArn": "...some value..."
                 },
-                "SomeCondition-cALrI": {
+                "SomeCondition-eZJpl": {
                     "ec2:CloudwatchLogGroupArn": "...some value..."
                 },
-                "SomeCondition-kXlrY": {
+                "SomeCondition-hwjmY": {
                     "ec2:CloudwatchLogStreamArn": "...some value..."
                 },
-                "SomeCondition-AbSkv": {
+                "SomeCondition-KrLVb": {
                     "ec2:CreateAction": "...some value..."
                 },
-                "SomeCondition-ZVFqk": {
+                "SomeCondition-xSmMC": {
                     "ec2:DPDTimeoutSeconds": "...some value..."
                 },
-                "SomeCondition-GVvKQ": {
+                "SomeCondition-GBxcU": {
                     "ec2:DirectoryArn": "...some value..."
                 },
-                "SomeCondition-xMJOc": {
+                "SomeCondition-etSfI": {
                     "ec2:EbsOptimized": "...some value..."
                 },
-                "SomeCondition-uYWCd": {
+                "SomeCondition-RKilA": {
                     "ec2:ElasticGpuType": "...some value..."
                 },
-                "SomeCondition-oSdca": {
+                "SomeCondition-fRdMK": {
                     "ec2:Encrypted": "...some value..."
                 },
-                "SomeCondition-OlVoB": {
+                "SomeCondition-OfzWC": {
                     "ec2:GatewayType": "...some value..."
                 },
-                "SomeCondition-noius": {
+                "SomeCondition-mMndH": {
                     "ec2:HostRecovery": "...some value..."
                 },
-                "SomeCondition-OQZsT": {
+                "SomeCondition-VdWxi": {
                     "ec2:IKEVersions": "...some value..."
                 },
-                "SomeCondition-sOWiN": {
+                "SomeCondition-fJbNk": {
                     "ec2:ImageType": "...some value..."
                 },
-                "SomeCondition-DQzeO": {
+                "SomeCondition-ayAqT": {
                     "ec2:InsideTunnelCidr": "...some value..."
                 },
-                "SomeCondition-FOwQl": {
+                "SomeCondition-lckrn": {
                     "ec2:InstanceMarketType": "...some value..."
                 },
-                "SomeCondition-KxakR": {
+                "SomeCondition-XfzTk": {
                     "ec2:InstanceProfile": "...some value..."
                 },
-                "SomeCondition-bpSyw": {
+                "SomeCondition-paoBg": {
                     "ec2:InstanceType": "...some value..."
                 },
-                "SomeCondition-YXbOT": {
+                "SomeCondition-rOHgV": {
                     "ec2:IsLaunchTemplateResource": "...some value..."
                 },
-                "SomeCondition-sMkPO": {
+                "SomeCondition-MaXKW": {
                     "ec2:KeyPairName": "...some value..."
                 },
-                "SomeCondition-YkqHN": {
+                "SomeCondition-JYMjC": {
                     "ec2:LaunchTemplate": "...some value..."
                 },
-                "SomeCondition-ADqhp": {
+                "SomeCondition-uXGAy": {
                     "ec2:MetadataHttpEndpoint": "...some value..."
                 },
-                "SomeCondition-cgBIQ": {
+                "SomeCondition-jieOv": {
                     "ec2:MetadataHttpPutResponseHopLimit": "...some value..."
                 },
-                "SomeCondition-QTmnL": {
+                "SomeCondition-IgGMv": {
                     "ec2:MetadataHttpTokens": "...some value..."
                 },
-                "SomeCondition-CiFRL": {
+                "SomeCondition-aeNTt": {
                     "ec2:NewInstanceProfile": "...some value..."
                 },
-                "SomeCondition-aeOub": {
+                "SomeCondition-onLKr": {
                     "ec2:OutpostArn": "...some value..."
                 },
-                "SomeCondition-HrdQe": {
+                "SomeCondition-wZDcu": {
                     "ec2:Owner": "...some value..."
                 },
-                "SomeCondition-BxLXR": {
+                "SomeCondition-WHtJL": {
                     "ec2:ParentSnapshot": "...some value..."
                 },
-                "SomeCondition-NzmOL": {
+                "SomeCondition-gyseW": {
                     "ec2:ParentVolume": "...some value..."
                 },
-                "SomeCondition-qTQId": {
+                "SomeCondition-UqGCp": {
                     "ec2:Permission": "...some value..."
                 },
-                "SomeCondition-pmTSy": {
+                "SomeCondition-YuJtO": {
                     "ec2:Phase1DHGroupNumbers": "...some value..."
                 },
-                "SomeCondition-XurFc": {
+                "SomeCondition-mJlyd": {
                     "ec2:Phase1EncryptionAlgorithms": "...some value..."
                 },
-                "SomeCondition-LMcoh": {
+                "SomeCondition-QeIvk": {
                     "ec2:Phase1IntegrityAlgorithms": "...some value..."
                 },
-                "SomeCondition-fRJwi": {
+                "SomeCondition-AzgWh": {
                     "ec2:Phase1LifetimeSeconds": "...some value..."
                 },
-                "SomeCondition-iyUlF": {
+                "SomeCondition-anFPU": {
                     "ec2:Phase2DHGroupNumbers": "...some value..."
                 },
-                "SomeCondition-oubtq": {
+                "SomeCondition-aJzbY": {
                     "ec2:Phase2EncryptionAlgorithms": "...some value..."
                 },
-                "SomeCondition-twJqX": {
+                "SomeCondition-HQCPN": {
                     "ec2:Phase2IntegrityAlgorithms": "...some value..."
                 },
-                "SomeCondition-XjbrZ": {
+                "SomeCondition-yxLGY": {
                     "ec2:Phase2LifetimeSeconds": "...some value..."
                 },
-                "SomeCondition-YyKFv": {
+                "SomeCondition-cmJXV": {
                     "ec2:PlacementGroup": "...some value..."
                 },
-                "SomeCondition-lBegj": {
+                "SomeCondition-XkaiI": {
                     "ec2:PlacementGroupStrategy": "...some value..."
                 },
-                "SomeCondition-kMyTI": {
+                "SomeCondition-MaDTP": {
                     "ec2:PresharedKeys": "...some value..."
                 },
-                "SomeCondition-OlMNZ": {
+                "SomeCondition-VfRJl": {
                     "ec2:ProductCode": "...some value..."
                 },
-                "SomeCondition-RxyZb": {
+                "SomeCondition-fDlXB": {
                     "ec2:Public": "...some value..."
                 },
-                "SomeCondition-hfnxl": {
+                "SomeCondition-MRwxj": {
                     "ec2:Quantity": "...some value..."
                 },
-                "SomeCondition-YlQLX": {
+                "SomeCondition-YQvEm": {
                     "ec2:Region": "...some value..."
                 },
-                "SomeCondition-WdZlE": {
+                "SomeCondition-JBiQj": {
                     "ec2:RekeyFuzzPercentage": "...some value..."
                 },
-                "SomeCondition-hmpED": {
+                "SomeCondition-cMoDt": {
                     "ec2:RekeyMarginTimeSeconds": "...some value..."
                 },
-                "SomeCondition-tckKV": {
+                "SomeCondition-JXivD": {
                     "ec2:RequesterVpc": "...some value..."
                 },
-                "SomeCondition-Ulnuw": {
+                "SomeCondition-oKYju": {
                     "ec2:ReservedInstancesOfferingType": "...some value..."
                 },
-                "SomeCondition-VsgML": {
+                "SomeCondition-kRSYK": {
                     "ec2:ResourceTag/": "...some value..."
                 },
-                "SomeCondition-PXQGK": {
+                "SomeCondition-FkvGi": {
                     "ec2:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-ULhzI": {
+                "SomeCondition-GoUzM": {
                     "ec2:RoleDelivery": "...some value..."
                 },
-                "SomeCondition-JSbmp": {
+                "SomeCondition-JFihl": {
                     "ec2:RootDeviceType": "...some value..."
                 },
-                "SomeCondition-rObBQ": {
+                "SomeCondition-mHhtw": {
                     "ec2:RoutingType": "...some value..."
                 },
-                "SomeCondition-UDjcF": {
+                "SomeCondition-WpzTt": {
                     "ec2:SamlProviderArn": "...some value..."
                 },
-                "SomeCondition-sXCSn": {
+                "SomeCondition-udFcP": {
                     "ec2:ServerCertificateArn": "...some value..."
                 },
-                "SomeCondition-keScy": {
+                "SomeCondition-oTsCU": {
                     "ec2:SnapshotTime": "...some value..."
                 },
-                "SomeCondition-HTlRW": {
+                "SomeCondition-WJkmw": {
                     "ec2:SourceInstanceARN": "...some value..."
                 },
-                "SomeCondition-oGbTB": {
+                "SomeCondition-ldZOJ": {
                     "ec2:SourceOutpostArn": "...some value..."
                 },
-                "SomeCondition-sMEbv": {
+                "SomeCondition-ClNfF": {
                     "ec2:Subnet": "...some value..."
                 },
-                "SomeCondition-bDWZq": {
+                "SomeCondition-NxwIM": {
                     "ec2:Tenancy": "...some value..."
                 },
-                "SomeCondition-NqFjC": {
+                "SomeCondition-leSBa": {
                     "ec2:VolumeIops": "...some value..."
                 },
-                "SomeCondition-wTAJN": {
+                "SomeCondition-ANQdi": {
                     "ec2:VolumeSize": "...some value..."
                 },
-                "SomeCondition-zbnjM": {
+                "SomeCondition-IRKMf": {
                     "ec2:VolumeThroughput": "...some value..."
                 },
-                "SomeCondition-yQwFM": {
+                "SomeCondition-gjOwz": {
                     "ec2:VolumeType": "...some value..."
                 },
-                "SomeCondition-MYQhq": {
+                "SomeCondition-ThGUR": {
                     "ec2:Vpc": "...some value..."
                 },
-                "SomeCondition-xnQWT": {
+                "SomeCondition-JHMqE": {
                     "ec2:VpceServiceName": "...some value..."
                 },
-                "SomeCondition-zYrpS": {
+                "SomeCondition-qfHSR": {
                     "ec2:VpceServiceOwner": "...some value..."
                 },
-                "SomeCondition-XMZfL": {
+                "SomeCondition-uOYnA": {
                     "ec2:VpceServicePrivateDnsName": "...some value..."
                 },
-                "SomeCondition-HvnEc": {
+                "SomeCondition-fZMCh": {
                     "ec2:osuser": "...some value..."
                 },
-                "SomeCondition-nfvwW": {
+                "SomeCondition-HTCqd": {
                     "ecr-public:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-hVsTe": {
+                "SomeCondition-vmpVh": {
                     "ecr:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-UMFKe": {
+                "SomeCondition-GdsBi": {
                     "ecs:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-ErjKo": {
+                "SomeCondition-WxdZc": {
                     "ecs:capacity-provider": "...some value..."
                 },
-                "SomeCondition-pqhQW": {
+                "SomeCondition-FPyOb": {
                     "ecs:cluster": "...some value..."
                 },
-                "SomeCondition-xyrnX": {
+                "SomeCondition-swPBM": {
                     "ecs:container-instances": "...some value..."
                 },
-                "SomeCondition-oGrSc": {
+                "SomeCondition-BDimT": {
                     "ecs:container-name": "...some value..."
                 },
-                "SomeCondition-jVOMy": {
+                "SomeCondition-jcfut": {
                     "ecs:enable-execute-command": "...some value..."
                 },
-                "SomeCondition-ZQyia": {
+                "SomeCondition-DgJrt": {
                     "ecs:service": "...some value..."
                 },
-                "SomeCondition-uMhDH": {
+                "SomeCondition-fOHTV": {
                     "ecs:task": "...some value..."
                 },
-                "SomeCondition-MVaWP": {
+                "SomeCondition-lNptP": {
                     "ecs:task-definition": "...some value..."
                 },
-                "SomeCondition-nmKbu": {
+                "SomeCondition-JjoyO": {
                     "eks:clientId": "...some value..."
                 },
-                "SomeCondition-aCkeA": {
+                "SomeCondition-IRngD": {
                     "eks:issuerUrl": "...some value..."
                 },
-                "SomeCondition-zjNyQ": {
+                "SomeCondition-UxwkL": {
                     "elasticache:AtRestEncryptionEnabled": "...some value..."
                 },
-                "SomeCondition-EOWqX": {
+                "SomeCondition-COomx": {
                     "elasticache:AuthTokenEnabled": "...some value..."
                 },
-                "SomeCondition-VfJzG": {
+                "SomeCondition-oDANe": {
                     "elasticache:AutomaticFailoverEnabled": "...some value..."
                 },
-                "SomeCondition-aXZHe": {
+                "SomeCondition-jIBiP": {
                     "elasticache:CacheNodeType": "...some value..."
                 },
-                "SomeCondition-Heshq": {
+                "SomeCondition-TVCzI": {
                     "elasticache:CacheParameterGroupName": "...some value..."
                 },
-                "SomeCondition-MjyWI": {
+                "SomeCondition-cIZiG": {
                     "elasticache:ClusterModeEnabled": "...some value..."
                 },
-                "SomeCondition-UJMSZ": {
+                "SomeCondition-GiBeL": {
                     "elasticache:EngineType": "...some value..."
                 },
-                "SomeCondition-JNyId": {
+                "SomeCondition-noHVp": {
                     "elasticache:EngineVersion": "...some value..."
                 },
-                "SomeCondition-mBqhV": {
+                "SomeCondition-PyrMu": {
                     "elasticache:KmsKeyId": "...some value..."
                 },
-                "SomeCondition-vdTko": {
+                "SomeCondition-rGxtD": {
                     "elasticache:MultiAZEnabled": "...some value..."
                 },
-                "SomeCondition-iArHz": {
+                "SomeCondition-UDheM": {
                     "elasticache:NumNodeGroups": "...some value..."
                 },
-                "SomeCondition-IdLNs": {
+                "SomeCondition-mtysd": {
                     "elasticache:ReplicasPerNodeGroup": "...some value..."
                 },
-                "SomeCondition-jnwyX": {
+                "SomeCondition-xNrDY": {
                     "elasticache:SnapshotRetentionLimit": "...some value..."
                 },
-                "SomeCondition-LiCxT": {
+                "SomeCondition-pbBUk": {
                     "elasticache:TransitEncryptionEnabled": "...some value..."
                 },
-                "SomeCondition-Bdrxp": {
+                "SomeCondition-enaIi": {
                     "elasticbeanstalk:FromApplication": "...some value..."
                 },
-                "SomeCondition-gifKj": {
+                "SomeCondition-HCOXu": {
                     "elasticbeanstalk:FromApplicationVersion": "...some value..."
                 },
-                "SomeCondition-duSoR": {
+                "SomeCondition-AOcRk": {
                     "elasticbeanstalk:FromConfigurationTemplate": "...some value..."
                 },
-                "SomeCondition-UQRnD": {
+                "SomeCondition-OlJkR": {
                     "elasticbeanstalk:FromEnvironment": "...some value..."
                 },
-                "SomeCondition-ADHeS": {
+                "SomeCondition-CYqGw": {
                     "elasticbeanstalk:FromPlatform": "...some value..."
                 },
-                "SomeCondition-EnMYy": {
+                "SomeCondition-fOdZQ": {
                     "elasticbeanstalk:FromSolutionStack": "...some value..."
                 },
-                "SomeCondition-jACrO": {
+                "SomeCondition-uLQck": {
                     "elasticbeanstalk:InApplication": "...some value..."
                 },
-                "SomeCondition-gnXtx": {
+                "SomeCondition-LDlAP": {
                     "elasticfilesystem:AccessPointArn": "...some value..."
                 },
-                "SomeCondition-NCcIp": {
+                "SomeCondition-JtAur": {
                     "elasticfilesystem:AccessedViaMountTarget": "...some value..."
                 },
-                "SomeCondition-mtvAL": {
+                "SomeCondition-aigCA": {
                     "elasticfilesystem:Encrypted": "...some value..."
                 },
-                "SomeCondition-fGoCs": {
+                "SomeCondition-afMPQ": {
                     "elasticloadbalancing:ResourceTag/": "...some value..."
                 },
-                "SomeCondition-fqHFP": {
+                "SomeCondition-TgsIx": {
                     "elasticloadbalancing:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-fQsIE": {
+                "SomeCondition-KhMaq": {
                     "elasticmapreduce:RequestTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-aPWLC": {
+                "SomeCondition-LUWAw": {
                     "elasticmapreduce:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-aHbVh": {
+                "SomeCondition-DoyWV": {
                     "emr-containers:ExecutionRoleArn": "...some value..."
                 },
-                "SomeCondition-PMGcK": {
+                "SomeCondition-CHhgL": {
                     "events:ManagedBy": "...some value..."
                 },
-                "SomeCondition-TbLcr": {
+                "SomeCondition-zJrnM": {
                     "events:TargetArn": "...some value..."
                 },
-                "SomeCondition-irYCR": {
+                "SomeCondition-HFeTP": {
                     "events:creatorAccount": "...some value..."
                 },
-                "SomeCondition-YBAXW": {
+                "SomeCondition-fCyqu": {
                     "events:detail-type": "...some value..."
                 },
-                "SomeCondition-afwLR": {
+                "SomeCondition-LxXIt": {
                     "events:detail.eventTypeCode": "...some value..."
                 },
-                "SomeCondition-xzwmh": {
+                "SomeCondition-NIUhb": {
                     "events:detail.service": "...some value..."
                 },
-                "SomeCondition-ivMCa": {
+                "SomeCondition-tezcJ": {
                     "events:detail.userIdentity.principalId": "...some value..."
                 },
-                "SomeCondition-xbJCD": {
+                "SomeCondition-vOlKs": {
                     "events:eventBusInvocation": "...some value..."
                 },
-                "SomeCondition-bTFKf": {
+                "SomeCondition-WGeLF": {
                     "events:source": "...some value..."
                 },
-                "SomeCondition-XpSjm": {
+                "SomeCondition-Djcof": {
                     "fis:Operations": "...some value..."
                 },
-                "SomeCondition-gvpSd": {
+                "SomeCondition-dvWzY": {
                     "fis:Percentage": "...some value..."
                 },
-                "SomeCondition-vJGMl": {
+                "SomeCondition-vkWHK": {
                     "fis:Service": "...some value..."
                 },
-                "SomeCondition-gkUro": {
+                "SomeCondition-qYPZt": {
                     "fis:Targets": "...some value..."
                 },
-                "SomeCondition-VpDTw": {
+                "SomeCondition-obVTC": {
                     "fsx:IsBackupCopyDestination": "...some value..."
                 },
-                "SomeCondition-mqSXZ": {
+                "SomeCondition-EoDHi": {
                     "fsx:IsBackupCopySource": "...some value..."
                 },
-                "SomeCondition-EfXIo": {
+                "SomeCondition-IGpbW": {
+                    "fsx:StorageVirtualMachineId": "...some value..."
+                },
+                "SomeCondition-bPiKk": {
                     "glacier:ArchiveAgeInDays": "...some value..."
                 },
-                "SomeCondition-oCEhp": {
+                "SomeCondition-aNWCc": {
                     "glacier:ResourceTag/": "...some value..."
                 },
-                "SomeCondition-knVXU": {
+                "SomeCondition-CyVpQ": {
+                    "glue:CredentialIssuingService": "...some value..."
+                },
+                "SomeCondition-OvAUl": {
+                    "glue:RoleAssumedBy": "...some value..."
+                },
+                "SomeCondition-ZMHJR": {
+                    "glue:SecurityGroupIds": "...some value..."
+                },
+                "SomeCondition-EtuTB": {
+                    "glue:SubnetIds": "...some value..."
+                },
+                "SomeCondition-SrHRK": {
+                    "glue:VpcIds": "...some value..."
+                },
+                "SomeCondition-uYLVS": {
                     "graph.facebook.com:app_id": "...some value..."
                 },
-                "SomeCondition-ryEHB": {
+                "SomeCondition-KnaDO": {
                     "graph.facebook.com:id": "...some value..."
                 },
-                "SomeCondition-pMDoH": {
+                "SomeCondition-CGSaq": {
                     "groundstation:configId": "...some value..."
                 },
-                "SomeCondition-zZlhe": {
+                "SomeCondition-iELjX": {
                     "groundstation:configType": "...some value..."
                 },
-                "SomeCondition-FLohX": {
+                "SomeCondition-XwOKd": {
                     "groundstation:contactId": "...some value..."
                 },
-                "SomeCondition-cXwVb": {
+                "SomeCondition-dywtF": {
                     "groundstation:dataflowEndpointGroupId": "...some value..."
                 },
-                "SomeCondition-BMUPJ": {
+                "SomeCondition-Tcqtf": {
                     "groundstation:groundStationId": "...some value..."
                 },
-                "SomeCondition-TcZSr": {
+                "SomeCondition-SrPhi": {
                     "groundstation:missionProfileId": "...some value..."
                 },
-                "SomeCondition-nXQTJ": {
+                "SomeCondition-QArdX": {
                     "groundstation:satelliteId": "...some value..."
                 },
-                "SomeCondition-ObiKl": {
+                "SomeCondition-pZWVy": {
                     "health:eventTypeCode": "...some value..."
                 },
-                "SomeCondition-escyB": {
+                "SomeCondition-heTJf": {
                     "health:service": "...some value..."
                 },
-                "SomeCondition-ohcUX": {
+                "SomeCondition-KVNSu": {
                     "iam:AWSServiceName": "...some value..."
                 },
-                "SomeCondition-liEoK": {
+                "SomeCondition-dxPwb": {
                     "iam:AssociatedResourceArn": "...some value..."
                 },
-                "SomeCondition-IOaUy": {
+                "SomeCondition-jZvUB": {
                     "iam:OrganizationsPolicyId": "...some value..."
                 },
-                "SomeCondition-ucNoi": {
+                "SomeCondition-OZjao": {
                     "iam:PassedToService": "...some value..."
                 },
-                "SomeCondition-ZRsnA": {
+                "SomeCondition-tzKic": {
                     "iam:PermissionsBoundary": "...some value..."
                 },
-                "SomeCondition-EejPN": {
+                "SomeCondition-zwXGc": {
                     "iam:PolicyARN": "...some value..."
                 },
-                "SomeCondition-UqCwn": {
+                "SomeCondition-FOkwG": {
                     "iam:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-qWbnT": {
+                "SomeCondition-JsGbd": {
                     "imagebuilder:CreatedResourceTag/<key>": "...some value..."
                 },
-                "SomeCondition-WFYgy": {
+                "SomeCondition-RiVKH": {
                     "imagebuilder:CreatedResourceTagKeys": "...some value..."
                 },
-                "SomeCondition-xnXAK": {
+                "SomeCondition-njXey": {
                     "iot:Delete": "...some value..."
                 },
-                "SomeCondition-feWpI": {
+                "SomeCondition-riqNb": {
                     "iot:DomainName": "...some value..."
                 },
-                "SomeCondition-sIyph": {
+                "SomeCondition-BlAha": {
                     "iot:ThingGroupArn": "...some value..."
                 },
-                "SomeCondition-YQONd": {
+                "SomeCondition-pBqsJ": {
                     "iot:TunnelDestinationService": "...some value..."
                 },
-                "SomeCondition-CDonK": {
+                "SomeCondition-xHdwJ": {
                     "iotanalytics:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-STMoZ": {
+                "SomeCondition-vkGuU": {
                     "iotevents:keyValue": "...some value..."
                 },
-                "SomeCondition-omZBw": {
+                "SomeCondition-edTuE": {
                     "iotsitewise:assetHierarchyPath": "...some value..."
                 },
-                "SomeCondition-yRiKX": {
+                "SomeCondition-ftnVC": {
                     "iotsitewise:childAssetId": "...some value..."
                 },
-                "SomeCondition-qhTgm": {
+                "SomeCondition-MUdSb": {
                     "iotsitewise:group": "...some value..."
                 },
-                "SomeCondition-XCdkP": {
+                "SomeCondition-nIEOu": {
                     "iotsitewise:iam": "...some value..."
                 },
-                "SomeCondition-xPZpw": {
+                "SomeCondition-UkJrS": {
                     "iotsitewise:portal": "...some value..."
                 },
-                "SomeCondition-fMpdN": {
+                "SomeCondition-ZLQfr": {
                     "iotsitewise:project": "...some value..."
                 },
-                "SomeCondition-NouiU": {
+                "SomeCondition-RAoEf": {
                     "iotsitewise:propertyId": "...some value..."
                 },
-                "SomeCondition-kwZme": {
+                "SomeCondition-BeJMg": {
                     "iotsitewise:user": "...some value..."
                 },
-                "SomeCondition-zBqin": {
+                "SomeCondition-scUzj": {
                     "kms:BypassPolicyLockoutSafetyCheck": "...some value..."
                 },
-                "SomeCondition-FpCZo": {
+                "SomeCondition-lzYJd": {
                     "kms:CallerAccount": "...some value..."
                 },
-                "SomeCondition-ryUVd": {
+                "SomeCondition-mjvfx": {
                     "kms:CustomerMasterKeySpec": "...some value..."
                 },
-                "SomeCondition-lCWHQ": {
+                "SomeCondition-SmVLq": {
                     "kms:CustomerMasterKeyUsage": "...some value..."
                 },
-                "SomeCondition-RWVUv": {
+                "SomeCondition-bceWr": {
                     "kms:DataKeyPairSpec": "...some value..."
                 },
-                "SomeCondition-WNnyr": {
+                "SomeCondition-GfVLw": {
                     "kms:EncryptionAlgorithm": "...some value..."
                 },
-                "SomeCondition-OUvTw": {
+                "SomeCondition-rihtq": {
                     "kms:EncryptionContextKeys": "...some value..."
                 },
-                "SomeCondition-LvZHg": {
+                "SomeCondition-xMFjh": {
                     "kms:ExpirationModel": "...some value..."
                 },
-                "SomeCondition-LERmw": {
+                "SomeCondition-dmCAX": {
                     "kms:GrantConstraintType": "...some value..."
                 },
-                "SomeCondition-eadIi": {
+                "SomeCondition-szTCp": {
                     "kms:GrantIsForAWSResource": "...some value..."
                 },
-                "SomeCondition-xedzi": {
+                "SomeCondition-AbYFd": {
                     "kms:GrantOperations": "...some value..."
                 },
-                "SomeCondition-TpqNW": {
+                "SomeCondition-zjPmn": {
                     "kms:GranteePrincipal": "...some value..."
                 },
-                "SomeCondition-NLMtI": {
+                "SomeCondition-tXZxq": {
                     "kms:KeyOrigin": "...some value..."
                 },
-                "SomeCondition-MYaXn": {
+                "SomeCondition-CeFnG": {
+                    "kms:KeySpec": "...some value..."
+                },
+                "SomeCondition-KBjGF": {
+                    "kms:KeyUsage": "...some value..."
+                },
+                "SomeCondition-onKIi": {
                     "kms:MessageType": "...some value..."
                 },
-                "SomeCondition-LwHna": {
+                "SomeCondition-nVdDw": {
                     "kms:MultiRegion": "...some value..."
                 },
-                "SomeCondition-GrEJT": {
+                "SomeCondition-CsJrz": {
                     "kms:MultiRegionKeyType": "...some value..."
                 },
-                "SomeCondition-XclQD": {
+                "SomeCondition-aRywc": {
                     "kms:PrimaryRegion": "...some value..."
                 },
-                "SomeCondition-Qmwas": {
+                "SomeCondition-yaFuQ": {
                     "kms:ReEncryptOnSameKey": "...some value..."
                 },
-                "SomeCondition-HGivF": {
+                "SomeCondition-aqGJK": {
                     "kms:ReplicaRegion": "...some value..."
                 },
-                "SomeCondition-bdrta": {
+                "SomeCondition-HjlmR": {
                     "kms:RequestAlias": "...some value..."
                 },
-                "SomeCondition-JlIta": {
+                "SomeCondition-ebkLd": {
                     "kms:ResourceAliases": "...some value..."
                 },
-                "SomeCondition-ePyta": {
+                "SomeCondition-nPbcW": {
                     "kms:RetiringPrincipal": "...some value..."
                 },
-                "SomeCondition-ksRQL": {
+                "SomeCondition-xnjbD": {
                     "kms:SigningAlgorithm": "...some value..."
                 },
-                "SomeCondition-BGKsr": {
+                "SomeCondition-imHku": {
                     "kms:ValidTo": "...some value..."
                 },
-                "SomeCondition-koghX": {
+                "SomeCondition-WskbB": {
                     "kms:ViaService": "...some value..."
                 },
-                "SomeCondition-Gdyfu": {
+                "SomeCondition-LsIvX": {
                     "kms:WrappingAlgorithm": "...some value..."
                 },
-                "SomeCondition-sWmuC": {
+                "SomeCondition-lUAyH": {
                     "kms:WrappingKeySpec": "...some value..."
                 },
-                "SomeCondition-ZDSgx": {
+                "SomeCondition-DtmkB": {
                     "lambda:CodeSigningConfigArn": "...some value..."
                 },
-                "SomeCondition-Etgud": {
+                "SomeCondition-SncUJ": {
                     "lambda:FunctionArn": "...some value..."
                 },
-                "SomeCondition-WIUCi": {
+                "SomeCondition-CQdoE": {
                     "lambda:Layer": "...some value..."
                 },
-                "SomeCondition-narYB": {
+                "SomeCondition-BXWbu": {
                     "lambda:Principal": "...some value..."
                 },
-                "SomeCondition-JSmdt": {
+                "SomeCondition-dLjlM": {
                     "lambda:SecurityGroupIds": "...some value..."
                 },
-                "SomeCondition-GBFWL": {
+                "SomeCondition-WnlKs": {
                     "lambda:SubnetIds": "...some value..."
                 },
-                "SomeCondition-LAZmC": {
+                "SomeCondition-IgPSV": {
                     "lambda:VpcIds": "...some value..."
                 },
-                "SomeCondition-vNRUm": {
+                "SomeCondition-qvDmU": {
                     "lex:associatedIntents": "...some value..."
                 },
-                "SomeCondition-aMHWV": {
+                "SomeCondition-qFvDt": {
                     "lex:associatedSlotTypes": "...some value..."
                 },
-                "SomeCondition-BRonL": {
+                "SomeCondition-fdULm": {
                     "lex:channelType": "...some value..."
                 },
-                "SomeCondition-wrWeU": {
+                "SomeCondition-bWfpj": {
                     "license-manager:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-sCRaF": {
+                "SomeCondition-XwceG": {
                     "networkmanager:cgwArn": "...some value..."
                 },
-                "SomeCondition-jXlkp": {
+                "SomeCondition-UJRkI": {
                     "networkmanager:tgwArn": "...some value..."
                 },
-                "SomeCondition-QwxPe": {
+                "SomeCondition-bjUxl": {
                     "networkmanager:tgwConnectPeerArn": "...some value..."
                 },
-                "SomeCondition-lrRkm": {
+                "SomeCondition-sceCM": {
                     "nimble:createdBy": "...some value..."
                 },
-                "SomeCondition-DLkwQ": {
+                "SomeCondition-VOGLC": {
                     "nimble:ownedBy": "...some value..."
                 },
-                "SomeCondition-CfZAH": {
+                "SomeCondition-aotEz": {
                     "nimble:principalId": "...some value..."
                 },
-                "SomeCondition-hCWjs": {
+                "SomeCondition-uShTP": {
                     "nimble:requesterPrincipalId": "...some value..."
                 },
-                "SomeCondition-bHDRJ": {
+                "SomeCondition-rhqug": {
                     "nimble:studioId": "...some value..."
                 },
-                "SomeCondition-xehmc": {
+                "SomeCondition-QZDYk": {
                     "organizations:PolicyType": "...some value..."
                 },
-                "SomeCondition-bjUaZ": {
+                "SomeCondition-SVFkD": {
                     "organizations:ServicePrincipal": "...some value..."
                 },
-                "SomeCondition-mGlUI": {
+                "SomeCondition-senBv": {
                     "proton:EnvironmentTemplate": "...some value..."
                 },
-                "SomeCondition-CTwGO": {
+                "SomeCondition-qoQIy": {
                     "proton:ServiceTemplate": "...some value..."
                 },
-                "SomeCondition-uYBXQ": {
+                "SomeCondition-oPqQN": {
                     "qldb:Purge": "...some value..."
                 },
-                "SomeCondition-wRXGC": {
+                "SomeCondition-jzSrZ": {
                     "quicksight:DirectoryType": "...some value..."
                 },
-                "SomeCondition-AZlXN": {
+                "SomeCondition-flhFn": {
                     "quicksight:Edition": "...some value..."
                 },
-                "SomeCondition-QaJSk": {
+                "SomeCondition-wPAeu": {
                     "quicksight:IamArn": "...some value..."
                 },
-                "SomeCondition-toUFj": {
+                "SomeCondition-VhWcZ": {
                     "quicksight:SessionName": "...some value..."
                 },
-                "SomeCondition-NaPlf": {
+                "SomeCondition-cqHRO": {
                     "quicksight:UserName": "...some value..."
                 },
-                "SomeCondition-bQwmX": {
+                "SomeCondition-fabzo": {
                     "ram:AllowsExternalPrincipals": "...some value..."
                 },
-                "SomeCondition-hiCPg": {
+                "SomeCondition-MivFH": {
                     "ram:PermissionArn": "...some value..."
                 },
-                "SomeCondition-mzwkZ": {
+                "SomeCondition-KLgfS": {
                     "ram:PermissionResourceType": "...some value..."
                 },
-                "SomeCondition-TCedi": {
+                "SomeCondition-yPbGT": {
                     "ram:Principal": "...some value..."
                 },
-                "SomeCondition-vjRel": {
+                "SomeCondition-zlmbD": {
                     "ram:RequestedAllowsExternalPrincipals": "...some value..."
                 },
-                "SomeCondition-yPQsO": {
+                "SomeCondition-WyEPD": {
                     "ram:RequestedResourceType": "...some value..."
                 },
-                "SomeCondition-jkPzO": {
+                "SomeCondition-XJfcz": {
                     "ram:ResourceArn": "...some value..."
                 },
-                "SomeCondition-wbcfC": {
+                "SomeCondition-MxSQK": {
                     "ram:ResourceShareName": "...some value..."
                 },
-                "SomeCondition-OjyFc": {
+                "SomeCondition-lUBPD": {
                     "ram:ShareOwnerAccountId": "...some value..."
                 },
-                "SomeCondition-yaogA": {
+                "SomeCondition-atCWE": {
                     "rds:DatabaseClass": "...some value..."
                 },
-                "SomeCondition-Njhpb": {
+                "SomeCondition-aEjKW": {
                     "rds:DatabaseEngine": "...some value..."
                 },
-                "SomeCondition-qtLai": {
+                "SomeCondition-AJRsy": {
                     "rds:DatabaseName": "...some value..."
                 },
-                "SomeCondition-npvsa": {
+                "SomeCondition-iJHwe": {
                     "rds:EndpointType": "...some value..."
                 },
-                "SomeCondition-QpBdf": {
+                "SomeCondition-PFuoO": {
                     "rds:MultiAz": "...some value..."
                 },
-                "SomeCondition-IpiAk": {
+                "SomeCondition-aBxjn": {
                     "rds:Piops": "...some value..."
                 },
-                "SomeCondition-NIoLq": {
+                "SomeCondition-ehomr": {
                     "rds:StorageEncrypted": "...some value..."
                 },
-                "SomeCondition-iBtYb": {
+                "SomeCondition-OnRiI": {
                     "rds:StorageSize": "...some value..."
                 },
-                "SomeCondition-PMOng": {
+                "SomeCondition-IaBxQ": {
                     "rds:Vpc": "...some value..."
                 },
-                "SomeCondition-oBpHN": {
+                "SomeCondition-YDUBV": {
                     "rds:cluster-pg-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-qvitF": {
+                "SomeCondition-kgXCh": {
                     "rds:cluster-snapshot-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-QulGD": {
+                "SomeCondition-JiHoP": {
                     "rds:cluster-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-rCzvf": {
+                "SomeCondition-YKtdo": {
                     "rds:db-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-HqStE": {
+                "SomeCondition-rWjqz": {
                     "rds:es-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-AhVmu": {
+                "SomeCondition-OFdSA": {
                     "rds:og-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-nOIEL": {
+                "SomeCondition-FlQwT": {
                     "rds:pg-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-nqljp": {
+                "SomeCondition-girsO": {
                     "rds:req-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-hVFiP": {
+                "SomeCondition-TVnWM": {
                     "rds:ri-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-vrxLT": {
+                "SomeCondition-uLYKk": {
                     "rds:secgrp-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-BhCrb": {
+                "SomeCondition-EGpbq": {
                     "rds:snapshot-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-xqKsN": {
+                "SomeCondition-IuTbG": {
                     "rds:subgrp-tag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-Mflxa": {
+                "SomeCondition-OiRpn": {
                     "redshift-data:statement-owner-iam-userid": "...some value..."
                 },
-                "SomeCondition-whvTA": {
+                "SomeCondition-EZrYc": {
                     "redshift:ConsumerIdentifier": "...some value..."
                 },
-                "SomeCondition-MhYZf": {
+                "SomeCondition-MOSBj": {
                     "redshift:DbName": "...some value..."
                 },
-                "SomeCondition-mTpLJ": {
+                "SomeCondition-cJjOF": {
                     "redshift:DbUser": "...some value..."
                 },
-                "SomeCondition-BbHLp": {
+                "SomeCondition-BysqS": {
                     "redshift:DurationSeconds": "...some value..."
                 },
-                "SomeCondition-NntGh": {
+                "SomeCondition-cgmvD": {
                     "s3-object-lambda:TlsVersion": "...some value..."
                 },
-                "SomeCondition-iDPsx": {
+                "SomeCondition-uHeSX": {
                     "s3-object-lambda:authType": "...some value..."
                 },
-                "SomeCondition-ZGDiH": {
+                "SomeCondition-YLCJd": {
                     "s3-object-lambda:signatureAge": "...some value..."
                 },
-                "SomeCondition-yrjxd": {
+                "SomeCondition-cZhSg": {
                     "s3-object-lambda:versionid": "...some value..."
                 },
-                "SomeCondition-sbwVC": {
+                "SomeCondition-GBZIj": {
                     "s3-outposts:AccessPointNetworkOrigin": "...some value..."
                 },
-                "SomeCondition-RHFcb": {
+                "SomeCondition-GMxAB": {
                     "s3-outposts:DataAccessPointAccount": "...some value..."
                 },
-                "SomeCondition-zNciK": {
+                "SomeCondition-JFIgE": {
                     "s3-outposts:DataAccessPointArn": "...some value..."
                 },
-                "SomeCondition-jQzMA": {
+                "SomeCondition-ZAGlO": {
                     "s3-outposts:ExistingObjectTag/<key>": "...some value..."
                 },
-                "SomeCondition-PXwoG": {
+                "SomeCondition-rHqXJ": {
                     "s3-outposts:RequestObjectTag/<key>": "...some value..."
                 },
-                "SomeCondition-Evfxn": {
+                "SomeCondition-cYpWO": {
                     "s3-outposts:RequestObjectTagKeys": "...some value..."
                 },
-                "SomeCondition-iBpAu": {
+                "SomeCondition-yFMts": {
                     "s3-outposts:authType": "...some value..."
                 },
-                "SomeCondition-nsCmS": {
+                "SomeCondition-rGEQK": {
                     "s3-outposts:delimiter": "...some value..."
                 },
-                "SomeCondition-eFOIQ": {
+                "SomeCondition-VguGU": {
                     "s3-outposts:max-keys": "...some value..."
                 },
-                "SomeCondition-JlFit": {
+                "SomeCondition-dzKyw": {
                     "s3-outposts:prefix": "...some value..."
                 },
-                "SomeCondition-hgcbS": {
+                "SomeCondition-OLrwQ": {
                     "s3-outposts:signatureAge": "...some value..."
                 },
-                "SomeCondition-XHMZq": {
+                "SomeCondition-Mfncl": {
                     "s3-outposts:signatureversion": "...some value..."
                 },
-                "SomeCondition-XOqUw": {
+                "SomeCondition-XrNxu": {
                     "s3-outposts:x-amz-acl": "...some value..."
                 },
-                "SomeCondition-qWUvV": {
+                "SomeCondition-jQYmH": {
                     "s3-outposts:x-amz-content-sha256": "...some value..."
                 },
-                "SomeCondition-MmqKE": {
+                "SomeCondition-cKPrf": {
                     "s3-outposts:x-amz-copy-source": "...some value..."
                 },
-                "SomeCondition-tTYWV": {
+                "SomeCondition-UvAzH": {
                     "s3-outposts:x-amz-metadata-directive": "...some value..."
                 },
-                "SomeCondition-AKWgI": {
+                "SomeCondition-lpvRr": {
                     "s3-outposts:x-amz-server-side-encryption": "...some value..."
                 },
-                "SomeCondition-nKpyO": {
+                "SomeCondition-ScFZf": {
                     "s3-outposts:x-amz-storage-class": "...some value..."
                 },
-                "SomeCondition-CiRKh": {
+                "SomeCondition-zmxBL": {
                     "s3:AccessPointNetworkOrigin": "...some value..."
                 },
-                "SomeCondition-EQJAU": {
+                "SomeCondition-twCLX": {
                     "s3:DataAccessPointAccount": "...some value..."
                 },
-                "SomeCondition-LMdvx": {
+                "SomeCondition-qUlME": {
                     "s3:DataAccessPointArn": "...some value..."
                 },
-                "SomeCondition-GkKJD": {
+                "SomeCondition-XVwNP": {
                     "s3:ExistingJobOperation": "...some value..."
                 },
-                "SomeCondition-AcgPf": {
+                "SomeCondition-gPnJx": {
                     "s3:ExistingJobPriority": "...some value..."
                 },
-                "SomeCondition-KodeF": {
+                "SomeCondition-Rdave": {
                     "s3:ExistingObjectTag/<key>": "...some value..."
                 },
-                "SomeCondition-sIrlZ": {
+                "SomeCondition-RcmNj": {
                     "s3:JobSuspendedCause": "...some value..."
                 },
-                "SomeCondition-xXDzN": {
+                "SomeCondition-xGDMq": {
                     "s3:LocationConstraint": "...some value..."
                 },
-                "SomeCondition-UjTSR": {
+                "SomeCondition-FpqAL": {
                     "s3:RequestJobOperation": "...some value..."
                 },
-                "SomeCondition-domkt": {
+                "SomeCondition-oqeIf": {
                     "s3:RequestJobPriority": "...some value..."
                 },
-                "SomeCondition-upeGB": {
+                "SomeCondition-VhmNZ": {
                     "s3:RequestObjectTag/<key>": "...some value..."
                 },
-                "SomeCondition-Gprlk": {
+                "SomeCondition-wYybQ": {
                     "s3:RequestObjectTagKeys": "...some value..."
                 },
-                "SomeCondition-iJVLr": {
+                "SomeCondition-ORdSa": {
                     "s3:ResourceAccount": "...some value..."
                 },
-                "SomeCondition-wJgSG": {
+                "SomeCondition-tSUbH": {
                     "s3:TlsVersion": "...some value..."
                 },
-                "SomeCondition-KQgwT": {
+                "SomeCondition-zMPvX": {
                     "s3:VersionId": "...some value..."
                 },
-                "SomeCondition-Cjwlb": {
+                "SomeCondition-JUtFD": {
                     "s3:authType": "...some value..."
                 },
-                "SomeCondition-rXmGH": {
+                "SomeCondition-FigYX": {
                     "s3:delimiter": "...some value..."
                 },
-                "SomeCondition-toJPO": {
+                "SomeCondition-FvVQb": {
                     "s3:locationconstraint": "...some value..."
                 },
-                "SomeCondition-cSVhF": {
+                "SomeCondition-nGIpM": {
                     "s3:max-keys": "...some value..."
                 },
-                "SomeCondition-Nygor": {
+                "SomeCondition-prfcd": {
                     "s3:object-lock-legal-hold": "...some value..."
                 },
-                "SomeCondition-kFnrH": {
+                "SomeCondition-nvrSe": {
                     "s3:object-lock-mode": "...some value..."
                 },
-                "SomeCondition-NcPRp": {
+                "SomeCondition-sMniA": {
                     "s3:object-lock-remaining-retention-days": "...some value..."
                 },
-                "SomeCondition-BsEni": {
+                "SomeCondition-ZdBAr": {
                     "s3:object-lock-retain-until-date": "...some value..."
                 },
-                "SomeCondition-OGSrw": {
+                "SomeCondition-kfKTg": {
                     "s3:prefix": "...some value..."
                 },
-                "SomeCondition-eCXAs": {
+                "SomeCondition-WuQKk": {
                     "s3:signatureAge": "...some value..."
                 },
-                "SomeCondition-Qnqyc": {
+                "SomeCondition-iYFbT": {
                     "s3:signatureversion": "...some value..."
                 },
-                "SomeCondition-xuKXI": {
+                "SomeCondition-klthq": {
                     "s3:versionid": "...some value..."
                 },
-                "SomeCondition-zuZvj": {
+                "SomeCondition-KufkJ": {
                     "s3:x-amz-acl": "...some value..."
                 },
-                "SomeCondition-cOGYw": {
+                "SomeCondition-Vbrly": {
                     "s3:x-amz-content-sha256": "...some value..."
                 },
-                "SomeCondition-KgqUp": {
+                "SomeCondition-YJmDd": {
                     "s3:x-amz-copy-source": "...some value..."
                 },
-                "SomeCondition-pWRJw": {
+                "SomeCondition-imePN": {
                     "s3:x-amz-grant-full-control": "...some value..."
                 },
-                "SomeCondition-BgtLK": {
+                "SomeCondition-fObwL": {
                     "s3:x-amz-grant-read": "...some value..."
                 },
-                "SomeCondition-LJUnG": {
+                "SomeCondition-ClTQP": {
                     "s3:x-amz-grant-read-acp": "...some value..."
                 },
-                "SomeCondition-gJYDT": {
+                "SomeCondition-bGcFx": {
                     "s3:x-amz-grant-write": "...some value..."
                 },
-                "SomeCondition-ZfKjv": {
+                "SomeCondition-eIlnT": {
                     "s3:x-amz-grant-write-acp": "...some value..."
                 },
-                "SomeCondition-Cekod": {
+                "SomeCondition-skpNI": {
                     "s3:x-amz-metadata-directive": "...some value..."
                 },
-                "SomeCondition-TrSUL": {
+                "SomeCondition-jfYrT": {
                     "s3:x-amz-server-side-encryption": "...some value..."
                 },
-                "SomeCondition-XyZwp": {
+                "SomeCondition-MIFjf": {
                     "s3:x-amz-server-side-encryption-aws-kms-key-id": "...some value..."
                 },
-                "SomeCondition-achsK": {
+                "SomeCondition-ryzed": {
                     "s3:x-amz-storage-class": "...some value..."
                 },
-                "SomeCondition-lxCvq": {
+                "SomeCondition-IMnTk": {
                     "s3:x-amz-website-redirect-location": "...some value..."
                 },
-                "SomeCondition-XqYOb": {
+                "SomeCondition-CNDHc": {
                     "sagemaker:AcceleratorTypes": "...some value..."
                 },
-                "SomeCondition-BlPVv": {
+                "SomeCondition-NpvWb": {
                     "sagemaker:AppNetworkAccessType": "...some value..."
                 },
-                "SomeCondition-sEyfR": {
+                "SomeCondition-Ikeuf": {
                     "sagemaker:DirectInternetAccess": "...some value..."
                 },
-                "SomeCondition-GxwrK": {
+                "SomeCondition-JdtbN": {
                     "sagemaker:DomainSharingOutputKmsKey": "...some value..."
                 },
-                "SomeCondition-VtQIw": {
+                "SomeCondition-PTnKR": {
                     "sagemaker:FeatureGroupOfflineStoreKmsKey": "...some value..."
                 },
-                "SomeCondition-twzoB": {
+                "SomeCondition-ojGiP": {
                     "sagemaker:FeatureGroupOfflineStoreS3Uri": "...some value..."
                 },
-                "SomeCondition-piQBV": {
+                "SomeCondition-EBsge": {
                     "sagemaker:FeatureGroupOnlineStoreKmsKey": "...some value..."
                 },
-                "SomeCondition-iYnPt": {
+                "SomeCondition-ApjwI": {
                     "sagemaker:FileSystemAccessMode": "...some value..."
                 },
-                "SomeCondition-wIqMT": {
+                "SomeCondition-KzHmS": {
                     "sagemaker:FileSystemDirectoryPath": "...some value..."
                 },
-                "SomeCondition-dNGru": {
+                "SomeCondition-GILQu": {
                     "sagemaker:FileSystemId": "...some value..."
                 },
-                "SomeCondition-mNxOy": {
+                "SomeCondition-UgBVz": {
                     "sagemaker:FileSystemType": "...some value..."
                 },
-                "SomeCondition-rFaPf": {
+                "SomeCondition-dlreq": {
                     "sagemaker:HomeEfsFileSystemKmsKey": "...some value..."
                 },
-                "SomeCondition-QJvjm": {
+                "SomeCondition-ZbAhy": {
                     "sagemaker:ImageArns": "...some value..."
                 },
-                "SomeCondition-uMtlV": {
+                "SomeCondition-UHyCn": {
                     "sagemaker:ImageVersionArns": "...some value..."
                 },
-                "SomeCondition-VNDmM": {
+                "SomeCondition-OHtYw": {
                     "sagemaker:InstanceTypes": "...some value..."
                 },
-                "SomeCondition-wzbtP": {
+                "SomeCondition-UVRwo": {
                     "sagemaker:InterContainerTrafficEncryption": "...some value..."
                 },
-                "SomeCondition-zTjHI": {
+                "SomeCondition-KHhyo": {
                     "sagemaker:MaxRuntimeInSeconds": "...some value..."
                 },
-                "SomeCondition-JNlFZ": {
+                "SomeCondition-lDsre": {
                     "sagemaker:ModelArn": "...some value..."
                 },
-                "SomeCondition-OQSec": {
+                "SomeCondition-PDgcj": {
                     "sagemaker:NetworkIsolation": "...some value..."
                 },
-                "SomeCondition-VLUmt": {
+                "SomeCondition-NxBtl": {
                     "sagemaker:OutputKmsKey": "...some value..."
                 },
-                "SomeCondition-CflDK": {
+                "SomeCondition-BSDcn": {
                     "sagemaker:ResourceTag/": "...some value..."
                 },
-                "SomeCondition-bnQMr": {
+                "SomeCondition-luiPa": {
                     "sagemaker:ResourceTag/${TagKey}": "...some value..."
                 },
-                "SomeCondition-vAzHG": {
+                "SomeCondition-tvlVW": {
                     "sagemaker:RootAccess": "...some value..."
                 },
-                "SomeCondition-hpcDj": {
+                "SomeCondition-qMgCR": {
                     "sagemaker:TargetModel": "...some value..."
                 },
-                "SomeCondition-byVWD": {
+                "SomeCondition-uSWqB": {
                     "sagemaker:VolumeKmsKey": "...some value..."
                 },
-                "SomeCondition-MQJEk": {
+                "SomeCondition-PIgpT": {
                     "sagemaker:VpcSecurityGroupIds": "...some value..."
                 },
-                "SomeCondition-KIASL": {
+                "SomeCondition-qYWAR": {
                     "sagemaker:VpcSubnets": "...some value..."
                 },
-                "SomeCondition-jQYvD": {
+                "SomeCondition-yqdbu": {
                     "sagemaker:WorkteamArn": "...some value..."
                 },
-                "SomeCondition-krIaj": {
+                "SomeCondition-VKvLZ": {
                     "sagemaker:WorkteamType": "...some value..."
                 },
-                "SomeCondition-mjcwL": {
+                "SomeCondition-zwqGU": {
                     "saml:aud": "...some value..."
                 },
-                "SomeCondition-Tnvbl": {
+                "SomeCondition-AJrxc": {
                     "saml:cn": "...some value..."
                 },
-                "SomeCondition-yqBVt": {
+                "SomeCondition-Fbsaw": {
                     "saml:commonName": "...some value..."
                 },
-                "SomeCondition-oPUTA": {
+                "SomeCondition-nfJIb": {
                     "saml:doc": "...some value..."
                 },
-                "SomeCondition-jJuUF": {
+                "SomeCondition-Wpdmr": {
                     "saml:eduorghomepageuri": "...some value..."
                 },
-                "SomeCondition-WtCyG": {
+                "SomeCondition-WDiSp": {
                     "saml:eduorgidentityauthnpolicyuri": "...some value..."
                 },
-                "SomeCondition-ogQKP": {
+                "SomeCondition-UcoaF": {
                     "saml:eduorglegalname": "...some value..."
                 },
-                "SomeCondition-XmcAN": {
+                "SomeCondition-xGiQK": {
                     "saml:eduorgsuperioruri": "...some value..."
                 },
-                "SomeCondition-PkCOI": {
+                "SomeCondition-ckDlE": {
                     "saml:eduorgwhitepagesuri": "...some value..."
                 },
-                "SomeCondition-gjPOk": {
+                "SomeCondition-imISD": {
                     "saml:edupersonaffiliation": "...some value..."
                 },
-                "SomeCondition-fceap": {
+                "SomeCondition-KdvAH": {
                     "saml:edupersonassurance": "...some value..."
                 },
-                "SomeCondition-IQbUY": {
+                "SomeCondition-xEkyz": {
                     "saml:edupersonentitlement": "...some value..."
                 },
-                "SomeCondition-ukCQm": {
+                "SomeCondition-cXAHk": {
                     "saml:edupersonnickname": "...some value..."
                 },
-                "SomeCondition-NJPOg": {
+                "SomeCondition-KAFjR": {
                     "saml:edupersonorgdn": "...some value..."
                 },
-                "SomeCondition-yBpak": {
+                "SomeCondition-ZmSQE": {
                     "saml:edupersonorgunitdn": "...some value..."
                 },
-                "SomeCondition-IBDAq": {
+                "SomeCondition-KomsQ": {
                     "saml:edupersonprimaryaffiliation": "...some value..."
                 },
-                "SomeCondition-rjhFX": {
+                "SomeCondition-niMmd": {
                     "saml:edupersonprimaryorgunitdn": "...some value..."
                 },
-                "SomeCondition-EMopJ": {
+                "SomeCondition-oOZmC": {
                     "saml:edupersonprincipalname": "...some value..."
                 },
-                "SomeCondition-bdNOt": {
+                "SomeCondition-MrSmi": {
                     "saml:edupersonscopedaffiliation": "...some value..."
                 },
-                "SomeCondition-UoRcl": {
+                "SomeCondition-skXYG": {
                     "saml:edupersontargetedid": "...some value..."
                 },
-                "SomeCondition-QeHES": {
+                "SomeCondition-PSWgu": {
                     "saml:givenName": "...some value..."
                 },
-                "SomeCondition-zfeMW": {
+                "SomeCondition-MUdTX": {
                     "saml:iss": "...some value..."
                 },
-                "SomeCondition-nmcJj": {
+                "SomeCondition-gFKYB": {
                     "saml:mail": "...some value..."
                 },
-                "SomeCondition-AdlNx": {
+                "SomeCondition-IYomi": {
                     "saml:name": "...some value..."
                 },
-                "SomeCondition-CNKRt": {
+                "SomeCondition-DgNCA": {
                     "saml:namequalifier": "...some value..."
                 },
-                "SomeCondition-CsbRF": {
+                "SomeCondition-YouPc": {
                     "saml:organizationStatus": "...some value..."
                 },
-                "SomeCondition-QjgPN": {
+                "SomeCondition-DroOV": {
                     "saml:primaryGroupSID": "...some value..."
                 },
-                "SomeCondition-CzfeU": {
+                "SomeCondition-HcDRz": {
                     "saml:sub": "...some value..."
                 },
-                "SomeCondition-LIbrE": {
+                "SomeCondition-eILbl": {
                     "saml:sub_type": "...some value..."
                 },
-                "SomeCondition-Gceza": {
+                "SomeCondition-rUMfy": {
                     "saml:surname": "...some value..."
                 },
-                "SomeCondition-rFNoH": {
+                "SomeCondition-cyRjM": {
                     "saml:uid": "...some value..."
                 },
-                "SomeCondition-ihLqM": {
+                "SomeCondition-uFgMH": {
                     "saml:x500UniqueIdentifier": "...some value..."
                 },
-                "SomeCondition-uqhwX": {
+                "SomeCondition-hJrSO": {
                     "secretsmanager:BlockPublicPolicy": "...some value..."
                 },
-                "SomeCondition-yoBxf": {
+                "SomeCondition-wJalp": {
                     "secretsmanager:Description": "...some value..."
                 },
-                "SomeCondition-bECol": {
+                "SomeCondition-SROoK": {
                     "secretsmanager:ForceDeleteWithoutRecovery": "...some value..."
                 },
-                "SomeCondition-qSWwC": {
+                "SomeCondition-fLWrO": {
                     "secretsmanager:KmsKeyId": "...some value..."
                 },
-                "SomeCondition-dSbDr": {
+                "SomeCondition-QyjEm": {
                     "secretsmanager:Name": "...some value..."
                 },
-                "SomeCondition-IhCWi": {
+                "SomeCondition-MAcEJ": {
                     "secretsmanager:RecoveryWindowInDays": "...some value..."
                 },
-                "SomeCondition-KRhjx": {
+                "SomeCondition-LMUbN": {
                     "secretsmanager:ResourceTag/tag-key": "...some value..."
                 },
-                "SomeCondition-setzU": {
+                "SomeCondition-WDrHp": {
                     "secretsmanager:RotationLambdaARN": "...some value..."
                 },
-                "SomeCondition-JfFXY": {
+                "SomeCondition-rNlgI": {
                     "secretsmanager:SecretId": "...some value..."
                 },
-                "SomeCondition-JljAv": {
+                "SomeCondition-hpWrx": {
                     "secretsmanager:SecretPrimaryRegion": "...some value..."
                 },
-                "SomeCondition-fjRCO": {
+                "SomeCondition-IvsNp": {
                     "secretsmanager:VersionId": "...some value..."
                 },
-                "SomeCondition-ZxyMe": {
+                "SomeCondition-gWaBz": {
                     "secretsmanager:VersionStage": "...some value..."
                 },
-                "SomeCondition-vEwCm": {
+                "SomeCondition-dpigK": {
                     "secretsmanager:resource/AllowRotationLambdaArn": "...some value..."
                 },
-                "SomeCondition-nJGQP": {
+                "SomeCondition-EBqie": {
                     "securityhub:ASFFSyntaxPath/${ASFFSyntaxPath}": "...some value..."
                 },
-                "SomeCondition-fMaIh": {
+                "SomeCondition-RNAcd": {
                     "securityhub:TargetAccount": "...some value..."
                 },
-                "SomeCondition-byFDa": {
+                "SomeCondition-ZGfVF": {
                     "serverlessrepo:applicationType": "...some value..."
                 },
-                "SomeCondition-OuGVf": {
+                "SomeCondition-PMjHC": {
                     "servicecatalog:accountLevel": "...some value..."
                 },
-                "SomeCondition-jxfOp": {
+                "SomeCondition-cnUgi": {
                     "servicecatalog:roleLevel": "...some value..."
                 },
-                "SomeCondition-BeDrp": {
+                "SomeCondition-UOyMj": {
                     "servicecatalog:userLevel": "...some value..."
                 },
-                "SomeCondition-vgpBK": {
+                "SomeCondition-gBSoL": {
                     "servicediscovery:NamespaceArn": "...some value..."
                 },
-                "SomeCondition-zCFSD": {
+                "SomeCondition-RvXTL": {
                     "servicediscovery:NamespaceName": "...some value..."
                 },
-                "SomeCondition-vTqOb": {
+                "SomeCondition-adGxB": {
                     "servicediscovery:ServiceArn": "...some value..."
                 },
-                "SomeCondition-sWQYw": {
+                "SomeCondition-oibDV": {
                     "servicediscovery:ServiceName": "...some value..."
                 },
-                "SomeCondition-scUPX": {
+                "SomeCondition-TwoOB": {
                     "servicequotas:service": "...some value..."
                 },
-                "SomeCondition-OzibE": {
+                "SomeCondition-cpbRW": {
                     "ses:FeedbackAddress": "...some value..."
                 },
-                "SomeCondition-oNWga": {
+                "SomeCondition-eRowq": {
                     "ses:FromAddress": "...some value..."
                 },
-                "SomeCondition-sdHaT": {
+                "SomeCondition-blmKD": {
                     "ses:FromDisplayName": "...some value..."
                 },
-                "SomeCondition-ylQdN": {
+                "SomeCondition-KcRxd": {
                     "ses:Recipients": "...some value..."
                 },
-                "SomeCondition-hwHQO": {
+                "SomeCondition-fvBwo": {
                     "signer:ProfileVersion": "...some value..."
                 },
-                "SomeCondition-QdpJy": {
+                "SomeCondition-MeqLf": {
                     "sns:Endpoint": "...some value..."
                 },
-                "SomeCondition-MWqVC": {
+                "SomeCondition-RGZWJ": {
                     "sns:Protocol": "...some value..."
                 },
-                "SomeCondition-pXuBh": {
+                "SomeCondition-xIaZJ": {
                     "ssm:Overwrite": "...some value..."
                 },
-                "SomeCondition-kGIue": {
+                "SomeCondition-vTtcq": {
                     "ssm:Recursive": "...some value..."
                 },
-                "SomeCondition-CxurE": {
+                "SomeCondition-JDiYC": {
                     "ssm:SessionDocumentAccessCheck": "...some value..."
                 },
-                "SomeCondition-IUGBz": {
+                "SomeCondition-hcoVw": {
                     "ssm:SyncType": "...some value..."
                 },
-                "SomeCondition-NIQrP": {
+                "SomeCondition-fBsVk": {
                     "ssm:resourceTag/tag-key": "...some value..."
                 },
-                "SomeCondition-AKLMn": {
+                "SomeCondition-nOSZl": {
                     "sts:ExternalId": "...some value..."
                 },
-                "SomeCondition-ulSFL": {
+                "SomeCondition-Nptrs": {
                     "sts:RoleSessionName": "...some value..."
                 },
-                "SomeCondition-arCyL": {
+                "SomeCondition-NKtDR": {
                     "sts:SourceIdentity": "...some value..."
                 },
-                "SomeCondition-rTvoO": {
+                "SomeCondition-OmnSF": {
                     "sts:TransitiveTagKeys": "...some value..."
                 },
-                "SomeCondition-PQSDr": {
+                "SomeCondition-GkQiP": {
                     "swf:activityType.name": "...some value..."
                 },
-                "SomeCondition-aWkgA": {
+                "SomeCondition-rqmKk": {
                     "swf:activityType.version": "...some value..."
                 },
-                "SomeCondition-Mshit": {
+                "SomeCondition-WraZx": {
                     "swf:defaultTaskList.name": "...some value..."
                 },
-                "SomeCondition-AXjvw": {
+                "SomeCondition-xvybG": {
                     "swf:name": "...some value..."
                 },
-                "SomeCondition-oqjwF": {
+                "SomeCondition-ouYAS": {
                     "swf:tagFilter.tag": "...some value..."
                 },
-                "SomeCondition-pWgLj": {
+                "SomeCondition-PbeFr": {
                     "swf:tagList.member.0": "...some value..."
                 },
-                "SomeCondition-hOsGV": {
+                "SomeCondition-WqptZ": {
                     "swf:tagList.member.1": "...some value..."
                 },
-                "SomeCondition-GVmKl": {
+                "SomeCondition-GcgfB": {
                     "swf:tagList.member.2": "...some value..."
                 },
-                "SomeCondition-uwIjO": {
+                "SomeCondition-pDbXr": {
                     "swf:tagList.member.3": "...some value..."
                 },
-                "SomeCondition-NvAKC": {
+                "SomeCondition-IbaCP": {
                     "swf:tagList.member.4": "...some value..."
                 },
-                "SomeCondition-PrbVt": {
+                "SomeCondition-qXJAt": {
                     "swf:taskList.name": "...some value..."
                 },
-                "SomeCondition-ymIbQ": {
+                "SomeCondition-IRgZL": {
                     "swf:typeFilter.name": "...some value..."
                 },
-                "SomeCondition-fmtDc": {
+                "SomeCondition-dSLXP": {
                     "swf:typeFilter.version": "...some value..."
                 },
-                "SomeCondition-xXVnp": {
+                "SomeCondition-iZDCH": {
                     "swf:version": "...some value..."
                 },
-                "SomeCondition-AyWiK": {
+                "SomeCondition-ETIMJ": {
                     "swf:workflowType.name": "...some value..."
                 },
-                "SomeCondition-LTpJz": {
+                "SomeCondition-JSEeX": {
                     "swf:workflowType.version": "...some value..."
                 },
-                "SomeCondition-mRnIc": {
+                "SomeCondition-tYSEq": {
                     "transcribe:OutputBucketName": "...some value..."
                 },
-                "SomeCondition-rgDvP": {
+                "SomeCondition-buQci": {
                     "transcribe:OutputEncryptionKMSKeyId": "...some value..."
                 },
-                "SomeCondition-iHjfh": {
+                "SomeCondition-KmNYx": {
                     "transcribe:OutputKey": "...some value..."
                 },
-                "SomeCondition-pONca": {
+                "SomeCondition-MpZfi": {
                     "www.amazon.com:app_id": "...some value..."
                 },
-                "SomeCondition-GgFHN": {
+                "SomeCondition-hrOsl": {
                     "www.amazon.com:user_id": "...some value..."
                 }
             }

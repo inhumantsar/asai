@@ -2,7 +2,7 @@
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "Sid-baDfw",
+            "Sid": "Sid-27f5fced6c3f23a41d0cb5d35028feda",
             "Effect": "Allow",
             "Action": [
                 "sqs:AddPermission",

@@ -177,7 +177,7 @@ def actions(prefix: str):
     """
     service = _get_service_by_prefix(prefix)
     for action in sorted(service.Actions):
-        click.echo(action)
+        click.echo(f"{prefix}:{action}")
 
 
 @service.command()
@@ -187,24 +187,24 @@ def actions_wildcard(prefix: str):  # noqa: D301
 
     \b
         $ asai service actions-wildcard s3
-        AbortMultipartUpload
-        BypassGovernanceRetention
-        Create*
-        Delete*
-        DescribeJob
-        Get*
-        List*
-        ObjectOwnerOverrideToBucketOwner
-        Put*
-        Replicate*
-        RestoreObject
-        Update*
+        s3:AbortMultipartUpload
+        s3:BypassGovernanceRetention
+        s3:Create*
+        s3:Delete*
+        s3:DescribeJob
+        s3:Get*
+        s3:List*
+        s3:ObjectOwnerOverrideToBucketOwner
+        s3:Put*
+        s3:Replicate*
+        s3:RestoreObject
+        s3:Update*
 
     PREFIX is a service's short name. eg: ec2, ssm, or s3.
     """
     service = _get_service_by_prefix(prefix)
     for action in service.action_wildcards:
-        click.echo(action)
+        click.echo(f"{prefix}:{action}")
 
 
 @service.command()
